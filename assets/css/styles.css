@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('../../assets/fonts/Roboto-Regular.ttf');
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+.profile-image {
+  height: 64px;
+  width: 64px;
+  border-radius: 3px;
+}
+
+.impact-message {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 42px;
+}
+
+.padding {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.intro-background {
+  background-image: url('../../images/banner.jpg');
+  color: whitesmoke;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Navbar */
+.navbar {
+  padding: .8rem;
+}
+
+.navbar-nav li {
+  padding-right: 20px;
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+}
+
+
+/* Carousel */
+.carousel-inner img {
+  height: 100%;
+  width: 100%;
+}
+
+.btn-outline-secondary {
+  color: white;
+  border-color: white;
+}
+
+
+/* Technologies */
+#technologies {
+  background-color: #3f3f3f;
+  color: whitesmoke;
+}
+
+.fa-html5 {
+  color: #E44D26;
+}
+
+.fa-bootstrap {
+  color: #080135;
+}
+
+.fa-css3-alt {
+  color: #0F5298;
+}
+
+.fa-node-js {
+  color: #3C873A;
+}
+
+.fa-react {
+  color: #61DBFB;
+}
+
+.fa-js {
+  color: #F0DB4F;
+}
+
+.fa-java {
+  color: #ED8B00;
+}
+
+.fa-git-alt {
+  color: #F1502F;
+}
+
+.fa-php {
+  color: #474A8A;
+}
+
+.fa-angular {
+  color: #B52E31;
+}
+
+.fa-html5,
+.fa-bootstrap,
+.fa-css3-alt,
+.fa-node-js,
+.fa-react,
+.fa-js,
+.fa-java,
+.fa-git-alt,
+.fa-php,
+.fa-angular {
+  font-size: 4rem;
+  margin: 1rem;
+}
+
+.icon-image {
+  height: 64px;
+  width: 64px;
+  margin: 1rem;
+}
+
+.technologies-figcaption-text {
+  font-size: 1.2rem;
+}
+
+
+/* Contact */
+#contact {
+  background-image: url('../../images/contact_compass.jpg'); /* Photo by Anas on Unsplash */
+  color: whitesmoke;
+  align-items: center;
+  font-style: oblique;
+}
+
+.social a {
+  font-size: 4.5em;
+  padding: 3rem;
+}
+
+.fa-linkedin {
+  color: #006192;
+}
+
+
+/* Footer */
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
