@@ -29,6 +29,9 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.padding-exam-certificate {
+  padding-bottom: 0.5rem;
+}
 
 .intro-background {
   background: radial-gradient(circle, rgba(36,0,32,1) 0%, rgba(106,105,104,1) 50%, rgba(56,101,112,1) 100%);
