@@ -92,16 +92,28 @@ body {
   color: whitesmoke;
 }
 
-.fa-html5 {
-  color: #e44d26;
-}
-
 .fa-bootstrap {
   color: #080135;
 }
 
 .fa-css3-alt {
   color: #0f5298;
+}
+
+.fa-git-alt {
+  color: #f1502f;
+}
+
+.fa-html5 {
+  color: #e44d26;
+}
+
+.fa-java {
+  color: #ed8b00;
+}
+
+.fa-js {
+  color: #f0db4f;
 }
 
 .fa-node-js {
@@ -112,36 +124,14 @@ body {
   color: #61dbfb;
 }
 
-.fa-js {
-  color: #f0db4f;
-}
-
-.fa-java {
-  color: #ed8b00;
-}
-
-.fa-git-alt {
-  color: #f1502f;
-}
-
-.fa-php {
-  color: #474a8a;
-}
-
-.fa-angular {
-  color: #b52e31;
-}
-
-.fa-html5,
 .fa-bootstrap,
 .fa-css3-alt,
-.fa-node-js,
-.fa-react,
-.fa-js,
-.fa-java,
 .fa-git-alt,
-.fa-php,
-.fa-angular {
+.fa-html5,
+.fa-java,
+.fa-js,
+.fa-node-js,
+.fa-react {
   font-size: 4rem;
   margin: 1rem;
 }
