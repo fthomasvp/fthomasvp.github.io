@@ -1,0 +1,175 @@
+---
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+
+const projectImage =
+  "https://images.unsplash.com/photo-1636955735635-b4c0fd54f360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
+const techImage = "";
+const projectDescription =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis non, soluta repellendus ipsum id obcaecati totam unde iure omnis possimus quidem laborum autem quae velit amet. Ut, velit nam";
+
+const projectData = [
+  {
+    cover: {
+      source: projectImage,
+      alt: "Agenda Cover",
+    },
+    title: "Agenda",
+    description:
+      "Have you ever had problems to book any common area in your building? Agenda is the solution to help you with that!",
+    techs: [
+      {
+        source:
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+        alt: "React",
+      },
+    ],
+  },
+  {
+    cover: {
+      source: projectImage,
+      alt: "Projeto 2 Cover",
+    },
+    title: "Projeto 2",
+    description: projectDescription,
+    techs: [
+      {
+        source:
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+        alt: "React",
+      },
+    ],
+  },
+  {
+    cover: {
+      source: projectImage,
+      alt: "Projeto 3 Cover",
+    },
+    title: "Projeto 3",
+    description: projectDescription,
+    techs: [
+      {
+        source:
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+        alt: "React",
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Fellipe Pires">
+  <main>
+    <section id="hero">
+      <div class="wrapper hero">
+        <div class="d-grid grid-col-2" style="grid-gap: 2rem;">
+          <div
+            class="animate__animated animate__bounceInLeft"
+            style="padding-inline: 1em;"
+          >
+            <h1>Hi!</h1>
+            <h1>I'm Fellipe</h1>
+            <div>
+              <span class="text-highlight">
+                Creative developer &#x2022; Enthusiast
+              </span>
+            </div>
+          </div>
+          <div style="position: relative; margin-block: 1em;">
+            <img
+              class="animate__animated animate__bounceInDown"
+              loading="lazy"
+              src="assets/drawkit-daily-life-vector-illustration-02.svg"
+              alt=""
+              style="max-width: 100%; position: absolute; top: -12rem; z-index: 1;"
+              height="700px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="diagonal-effect">
+      <div class="wrapper">
+        <h2>Projects</h2>
+        <div class="grid-container">
+          {projectData.map((item) => <Card {...item} />)}
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="wave-effect">
+      <div class="wrapper">
+        <h2>About</h2>
+        <p>
+          IT developer, creative and enthusiast. I like to work in group, solve
+          problems and develop solutions that - in a simple and cohesive way -
+          will make a positive impact.
+        </p>
+        <div
+          class="d-flex flex-direction-row flex-wrap justify-center"
+          style="gap: 4rem; margin-block-start: 2rem;"
+        >
+          <div>
+            <a href="https://linkedin.com/in/fthomasvp">
+              <img
+                loading="lazy"
+                src="/assets/linkedin.png"
+                alt="LinkedIn"
+                width="45"
+                height="45"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="https://github.com/fthomasvp"
+              ><img
+                loading="lazy"
+                src="/assets/github.png"
+                alt="GitHub"
+                width="45"
+                height="45"
+              /></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero {
+    font-size: 1.5rem;
+    font-family: "Comfortaa", cursive, var(--font-family-fallback);
+
+    position: relative;
+
+    padding-inline: 0;
+    padding-block: 6em;
+  }
+
+  /* TODO: improve this selector */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .grid-col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem;
+      place-items: center;
+    }
+
+    .grid-col-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,201 @@
+---
+import "animate.css";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-soft-white: #ddd;
+    --color-gunmetal: #2b2d42;
+    --color-aureolin: #e7e700;
+    --color-tiffany-blue: #84dccf;
+
+    --font-family-fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  /* html {
+    color-scheme: dark light;
+  } */
+
+  body {
+    color: var(--color-soft-white);
+    font-family: "Poppins", sans-serif, var(--font-family-fallback);
+    font-size: 1.25rem;
+    line-height: 1.5;
+
+    margin: 0;
+
+    background: linear-gradient(
+      90deg,
+      hsla(205, 46%, 10%, 1) 0%,
+      hsla(191, 28%, 23%, 1) 50%,
+      hsla(207, 41%, 27%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+      90deg,
+      hsla(205, 46%, 10%, 1) 0%,
+      hsla(191, 28%, 23%, 1) 50%,
+      hsla(207, 41%, 27%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      hsla(205, 46%, 10%, 1) 0%,
+      hsla(191, 28%, 23%, 1) 50%,
+      hsla(207, 41%, 27%, 1) 100%
+    );
+  }
+
+  section {
+    /* `block` represents "top" and "bottom" */
+    padding-block: 6em;
+  }
+
+  h2 {
+    margin-block: 0.8em;
+  }
+
+  /* ul li:not(:last-child) {
+    padding-bottom: 2em;
+  } */
+
+  .d-flex {
+    display: flex;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-direction-column {
+    flex-direction: column;
+  }
+  .flex-direction-row {
+    flex-direction: row;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .align-center {
+    align-items: center;
+  }
+
+  .d-grid {
+    display: grid;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .wrapper {
+    max-width: 60em;
+
+    margin-inline: auto;
+    /* `inline` represents "left" and "right" */
+    padding-inline: 1.25em;
+  }
+
+  /* Wave background effect */
+  .wave-effect {
+    position: relative;
+  }
+  .wave-effect::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 180px;
+
+    transform: rotateX(180deg
+    );
+
+    background: var(--color-tiffany-blue);
+    -webkit-mask-image: url("assets/wave-headline-01.svg");
+  }
+
+  /* Diagonal background effect */
+  .diagonal-effect {
+    position: relative;
+    isolation: isolate;
+  }
+  .diagonal-effect::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--color-tiffany-blue);
+    opacity: 25%;
+
+    transform: skewY(-4deg);
+  }
+
+  /* Highlight animation */
+  .text-highlight {
+    background: linear-gradient(
+      to right,
+      white,
+      white 50%,
+      var(--color-gunmetal) 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+
+    animation: 4s ease-in-out 0s infinite normal none running highlighting;
+  }
+  @keyframes highlighting {
+    from {
+      background-position: 100%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    to {
+      background-position: 0% 100%;
+    }
+  }
+</style>
