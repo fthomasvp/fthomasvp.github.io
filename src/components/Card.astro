@@ -15,36 +15,39 @@ const { cover, title, description, techs } = Astro.props as Card;
 ---
 
 <div class="card">
-  <img src={cover.source} alt={cover.alt} />
+  <img class="card__cover" src={cover.source} alt={cover.alt} />
 
-  <div>
-    {
-      techs.map((item) => (
-        <img src={item.source} alt={item.alt} width="40" height="40" />
-      ))
-    }
+  <div class="card__body">
+    <div class="card__icons">
+      {
+        techs.map((item) => (
+          <img src={item.source} alt={item.alt} width="40" height="40" />
+        ))
+      }
+    </div>
+
+    <p style="font-weight: bold;">{title}</p>
+    <p style="font-style: italic;">{description}</p>
   </div>
-
-  <p style="font-weight: bold;">{title}</p>
-  <p style="font-style: italic;">{description}</p>
 </div>
 
 <style>
   .card {
     border: 0px solid transparent;
     border-radius: 4px;
-    box-shadow: 0 0 8px var(--color-tiffany-blue);
-  }
 
-  .card > img {
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  }
+  .card__cover {
     max-width: 100%;
 
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
   }
-
-  .card > div,
-  p {
+  .card__body {
     padding-inline: 1em;
+  }
+  .card__icons > img {
+    border-radius: 50%;
   }
 </style>
