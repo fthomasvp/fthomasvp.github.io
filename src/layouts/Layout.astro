@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
@@ -35,7 +35,66 @@ const { title } = Astro.props;
     --color-aureolin: #e7e700;
     --color-tiffany-blue: #84dccf;
 
-    --font-family-fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
+    /* Breakpoints */
+    --breakpoint-sm: 30em; /* 480px */
+    --breakpoint-md: 48em; /* 768px */
+    --breakpoint-lg: 62em; /* 992px */
+    --breakpoint-xl: 80em; /* 1280px */
+    --breakpoint-2xl: 96em; /* 1536px */
+
+    /* Font sizes */
+    --fontsize-xs: 0.75rem;
+    --fontsize-sm: 0.875rem;
+    --fontsize-md: 1rem;
+    --fontsize-lg: 1.125rem;
+    --fontsize-xl: 1.25rem;
+    --fontsize-2xl: 1.5rem;
+    --fontsize-3xl: 1.875rem;
+    --fontsize-4xl: 2.25rem;
+    --fontsize-5xl: 3rem;
+    --fontsize-6xl: 3.75rem;
+    --fontsize-7xl: 4.5rem;
+    --fontsize-8xl: 6rem;
+    --fontsize-9xl: 8rem;
+
+    /* Font weights */
+    --fontweight-hairline: 100;
+    --fontweight-thin: 200;
+    --fontweight-light: 300;
+    --fontweight-normal: 400;
+    --fontweight-medium: 500;
+    --fontweight-semibold: 600;
+    --fontweight-bold: 700;
+    --fontweight-extrabold: 800;
+    --fontweight-black: 900;
+
+    /* Line heights */
+    --lineheight-normal: "normal";
+    --lineheight-none: 1;
+    --lineheight-shorter: 1.25;
+    --lineheight-short: 1.375;
+    --lineheight-base: 1.5;
+    --lineheight-tall: 1.625;
+    --lineheight-taller: 2;
+    --lineheight-3: 0.75rem;
+    --lineheight-4: 1rem;
+    --lineheight-5: 1.25rem;
+    --lineheight-6: 1.5rem;
+    --lineheight-7: 1.75rem;
+    --lineheight-8: 2rem;
+    --lineheight-9: 2.25rem;
+    --lineheight-10: 2.5rem;
+
+    /* Letter spacings */
+    --letterspacing-tighter: -0.05em;
+    --letterspacing-tight: -0.025em;
+    --letterspacing-normal: 0;
+    --letterspacing-wide: 0.025em;
+    --letterspacing-wider: 0.05em;
+    --letterspacing-widest: 0.1em;
+
+    /* Fonts */
+    --fontfamily--fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 
@@ -48,17 +107,17 @@ const { title } = Astro.props;
 
     margin: 0;
     padding: 0;
+
+    word-wrap: break-word;
   }
 
-  /* html {
-    color-scheme: dark light;
-  } */
-
   body {
+    overflow-x: hidden;
+
     color: var(--color-soft-white);
-    font-family: "Poppins", sans-serif, var(--font-family-fallback);
-    font-size: 1.25rem;
-    line-height: 1.5;
+    font-family: "Poppins", sans-serif, var(--fontfamily--fallback);
+    font-size: 16px;
+    line-height: var(--lineheight-base);
 
     margin: 0;
 
@@ -91,9 +150,20 @@ const { title } = Astro.props;
     margin-block: 0.8em;
   }
 
-  /* ul li:not(:last-child) {
-    padding-bottom: 2em;
-  } */
+  img {
+    max-width: 100%;
+  }
+
+  @media (min-width: 0em) {
+    p {
+      font-size: var(--fontsize-md);
+    }
+  }
+  @media (min-width: 30em) {
+    p {
+      font-size: var(--fontsize-lg);
+    }
+  }
 
   .d-flex {
     display: flex;
@@ -146,8 +216,7 @@ const { title } = Astro.props;
     width: 100%;
     height: 180px;
 
-    transform: rotateX(180deg
-    );
+    transform: rotateX(180deg);
 
     background: var(--color-tiffany-blue);
     -webkit-mask-image: url("assets/wave-headline-01.svg");
@@ -185,7 +254,7 @@ const { title } = Astro.props;
     background-size: 200% 100%;
     background-position: 100%;
 
-    animation: 4s ease-in-out 0s infinite normal none running highlighting;
+    animation: 4s ease-in-out 1s infinite normal none running highlighting;
   }
   @keyframes highlighting {
     from {
