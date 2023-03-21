@@ -15,26 +15,32 @@ const { cover, title, description, techs } = Astro.props as Card;
 ---
 
 <div class="card">
-  <img class="card__cover" src={cover.source} alt={cover.alt} />
+  <img loading="lazy" class="card__cover" src={cover.source} alt={cover.alt} />
 
   <div class="card__body">
     <div class="card__icons">
       {
         techs.map((item) => (
-          <img src={item.source} alt={item.alt} width="40" height="40" />
+          <img
+            loading="lazy"
+            src={item.source}
+            alt={item.alt}
+            width="35"
+            height="35"
+          />
         ))
       }
     </div>
 
-    <p style="font-weight: bold;">{title}</p>
-    <p style="font-style: italic;">{description}</p>
+    <p class="card__title">{title.toUpperCase()}</p>
+    <p class="card__description"><em>{description}</em></p>
   </div>
 </div>
 
 <style>
   .card {
     border: 0px solid transparent;
-    border-radius: 4px;
+    border-radius: var(--radii-base);
 
     box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
   }
@@ -45,9 +51,19 @@ const { cover, title, description, techs } = Astro.props as Card;
     border-top-left-radius: 2px;
   }
   .card__body {
-    padding-inline: 1em;
+    padding-inline: 0.5em;
+    padding-block: 0.5em;
+  }
+  .card__icons {
+    padding-block-end: 0.5em;
   }
   .card__icons > img {
     border-radius: 50%;
+  }
+  .card__title {
+    font-weight: var(--fontweights-bold);
+    font-size: var(--fontsizes-lg);
+
+    padding-block-end: 0.25em;
   }
 </style>

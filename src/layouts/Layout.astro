@@ -30,68 +30,97 @@ const { title } = Astro.props;
 
 <style is:global>
   :root {
-    --color-soft-white: #ddd;
-    --color-gunmetal: #2b2d42;
-    --color-aureolin: #e7e700;
-    --color-tiffany-blue: #84dccf;
+    --colors-dark: #0f0f10;
+    --colors-soft-white: #ddd;
+    --colors-gunmetal: #2b2d42;
+    --colors-aureolin: #e7e700;
+    --colors-tiffany-blue: #84dccf;
 
     /* Breakpoints */
-    --breakpoint-sm: 30em; /* 480px */
-    --breakpoint-md: 48em; /* 768px */
-    --breakpoint-lg: 62em; /* 992px */
-    --breakpoint-xl: 80em; /* 1280px */
-    --breakpoint-2xl: 96em; /* 1536px */
+    /* Maybe I should add SASS to the project */
+    /* https://bholmes.dev/blog/alternative-to-css-variable-media-queries/ */
+    --breakpoints-sm: 30em; /* 480px */
+    --breakpoints-md: 48em; /* 768px */
+    --breakpoints-lg: 62em; /* 992px */
+    --breakpoints-xl: 80em; /* 1280px */
+    --breakpoints-2xl: 96em; /* 1536px */
+
+    /* Border radius */
+    --radii-none: 0;
+    --radii-sm: 0.125rem;
+    --radii-base: 0.25rem;
+    --radii-md: 0.375rem;
+    --radii-lg: 0.5rem;
+    --radii-xl: 0.75rem;
+    --radii-2xl: 1rem;
+    --radii-3xl: 1.5rem;
+    --radii-full: 9999px;
+
+    /* Z-Indexes */
+    --zIndices-hide: -1;
+    --zIndices-auto: "auto";
+    --zIndices-base: 0;
+    --zIndices-docked: 10;
+    --zIndices-dropdown: 1000;
+    --zIndices-sticky: 1100;
+    --zIndices-banner: 1200;
+    --zIndices-overlay: 1300;
+    --zIndices-modal: 1400;
+    --zIndices-popover: 1500;
+    --zIndices-skipLink: 1600;
+    --zIndices-toast: 1700;
+    --zIndices-tooltip: 1800;
 
     /* Font sizes */
-    --fontsize-xs: 0.75rem;
-    --fontsize-sm: 0.875rem;
-    --fontsize-md: 1rem;
-    --fontsize-lg: 1.125rem;
-    --fontsize-xl: 1.25rem;
-    --fontsize-2xl: 1.5rem;
-    --fontsize-3xl: 1.875rem;
-    --fontsize-4xl: 2.25rem;
-    --fontsize-5xl: 3rem;
-    --fontsize-6xl: 3.75rem;
-    --fontsize-7xl: 4.5rem;
-    --fontsize-8xl: 6rem;
-    --fontsize-9xl: 8rem;
+    --fontsizes-xs: 0.75rem;
+    --fontsizes-sm: 0.875rem;
+    --fontsizes-md: 1rem;
+    --fontsizes-lg: 1.125rem;
+    --fontsizes-xl: 1.25rem;
+    --fontsizes-2xl: 1.5rem;
+    --fontsizes-3xl: 1.875rem;
+    --fontsizes-4xl: 2.25rem;
+    --fontsizes-5xl: 3rem;
+    --fontsizes-6xl: 3.75rem;
+    --fontsizes-7xl: 4.5rem;
+    --fontsizes-8xl: 6rem;
+    --fontsizes-9xl: 8rem;
 
     /* Font weights */
-    --fontweight-hairline: 100;
-    --fontweight-thin: 200;
-    --fontweight-light: 300;
-    --fontweight-normal: 400;
-    --fontweight-medium: 500;
-    --fontweight-semibold: 600;
-    --fontweight-bold: 700;
-    --fontweight-extrabold: 800;
-    --fontweight-black: 900;
+    --fontweights-hairline: 100;
+    --fontweights-thin: 200;
+    --fontweights-light: 300;
+    --fontweights-normal: 400;
+    --fontweights-medium: 500;
+    --fontweights-semibold: 600;
+    --fontweights-bold: 700;
+    --fontweights-extrabold: 800;
+    --fontweights-black: 900;
 
     /* Line heights */
-    --lineheight-normal: "normal";
-    --lineheight-none: 1;
-    --lineheight-shorter: 1.25;
-    --lineheight-short: 1.375;
-    --lineheight-base: 1.5;
-    --lineheight-tall: 1.625;
-    --lineheight-taller: 2;
-    --lineheight-3: 0.75rem;
-    --lineheight-4: 1rem;
-    --lineheight-5: 1.25rem;
-    --lineheight-6: 1.5rem;
-    --lineheight-7: 1.75rem;
-    --lineheight-8: 2rem;
-    --lineheight-9: 2.25rem;
-    --lineheight-10: 2.5rem;
+    --lineheights-normal: "normal";
+    --lineheights-none: 1;
+    --lineheights-shorter: 1.25;
+    --lineheights-short: 1.375;
+    --lineheights-base: 1.5;
+    --lineheights-tall: 1.625;
+    --lineheights-taller: 2;
+    --lineheights-3: 0.75rem;
+    --lineheights-4: 1rem;
+    --lineheights-5: 1.25rem;
+    --lineheights-6: 1.5rem;
+    --lineheights-7: 1.75rem;
+    --lineheights-8: 2rem;
+    --lineheights-9: 2.25rem;
+    --lineheights-10: 2.5rem;
 
     /* Letter spacings */
-    --letterspacing-tighter: -0.05em;
-    --letterspacing-tight: -0.025em;
-    --letterspacing-normal: 0;
-    --letterspacing-wide: 0.025em;
-    --letterspacing-wider: 0.05em;
-    --letterspacing-widest: 0.1em;
+    --letterspacings-tighter: -0.05em;
+    --letterspacings-tight: -0.025em;
+    --letterspacings-normal: 0;
+    --letterspacings-wide: 0.025em;
+    --letterspacings-wider: 0.05em;
+    --letterspacings-widest: 0.1em;
 
     /* Fonts */
     --fontfamily--fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
@@ -112,33 +141,12 @@ const { title } = Astro.props;
   }
 
   body {
-    overflow-x: hidden;
-
-    color: var(--color-soft-white);
+    color: var(--colors-dark);
     font-family: "Poppins", sans-serif, var(--fontfamily--fallback);
-    font-size: 16px;
-    line-height: var(--lineheight-base);
+    font-size: var(--fontsizes-md);
+    line-height: var(--lineheights-base);
 
-    margin: 0;
-
-    background: linear-gradient(
-      90deg,
-      hsla(205, 46%, 10%, 1) 0%,
-      hsla(191, 28%, 23%, 1) 50%,
-      hsla(207, 41%, 27%, 1) 100%
-    );
-    background: -moz-linear-gradient(
-      90deg,
-      hsla(205, 46%, 10%, 1) 0%,
-      hsla(191, 28%, 23%, 1) 50%,
-      hsla(207, 41%, 27%, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      90deg,
-      hsla(205, 46%, 10%, 1) 0%,
-      hsla(191, 28%, 23%, 1) 50%,
-      hsla(207, 41%, 27%, 1) 100%
-    );
+    background-color: #fff;
   }
 
   section {
@@ -148,20 +156,15 @@ const { title } = Astro.props;
 
   h2 {
     margin-block: 0.8em;
+
+    font-size: var(--fontsizes-3xl);
+    font-family: "Bebas Neue", cursive, var(--fontfamily--fallback);
+    letter-spacing: var(--letterspacings-wider);
   }
 
-  img {
-    max-width: 100%;
-  }
-
-  @media (min-width: 0em) {
-    p {
-      font-size: var(--fontsize-md);
-    }
-  }
   @media (min-width: 30em) {
-    p {
-      font-size: var(--fontsize-lg);
+    body {
+      font-size: var(--fontsizes-lg);
     }
   }
 
@@ -212,13 +215,14 @@ const { title } = Astro.props;
 
     position: absolute;
     bottom: 0;
+    z-index: var(--zIndices-hide);
 
     width: 100%;
     height: 180px;
 
     transform: rotateX(180deg);
 
-    background: var(--color-tiffany-blue);
+    background: var(--colors-tiffany-blue);
     -webkit-mask-image: url("assets/wave-headline-01.svg");
   }
 
@@ -232,10 +236,9 @@ const { title } = Astro.props;
 
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: var(--zIndices-hide);
 
-    background: var(--color-tiffany-blue);
-    opacity: 25%;
+    background: var(--colors-tiffany-blue);
 
     transform: skewY(-4deg);
   }
@@ -246,7 +249,7 @@ const { title } = Astro.props;
       to right,
       white,
       white 50%,
-      var(--color-gunmetal) 50%
+      var(--colors-gunmetal) 50%
     );
     background-clip: text;
     -webkit-background-clip: text;

@@ -1,10 +1,14 @@
 ---
 import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 
 const projectImage =
   "https://images.unsplash.com/photo-1636955735635-b4c0fd54f360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
-const techImage = "";
+const techIconUrl =
+  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80";
+const techIconAlt = "Blue React";
 const projectDescription =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis non, soluta repellendus ipsum id obcaecati totam unde iure omnis possimus quidem laborum autem quae velit amet. Ut, velit nam";
 
@@ -16,52 +20,43 @@ const projectData = [
     },
     title: "Agenda",
     description:
-      "Have you ever had problems to book any common area in your building? Agenda is the solution to help you with that!",
+      "Have you ever had problems to book any common area in your building? Agenda is the best solution to help you with that!",
     techs: [
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
       {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React icon",
+        source: techIconUrl,
+        alt: techIconAlt,
       },
     ],
   },
@@ -100,26 +95,20 @@ const projectData = [
 
 <Layout title="Fellipe Pires">
   <main>
-    <section class="hero">
-      <div class="hero-introduction animate__animated animate__bounceInLeft">
-        <h1>I'm</h1>
-        <h1>Fellipe</h1>
-        <p class="text-highlight">Creative developer &#x2022; Enthusiast</p>
-      </div>
-      <div class="hero-image">
-        <img
-          class="animate__animated animate__bounceInDown"
-          loading="lazy"
-          src="assets/drawkit-daily-life-vector-illustration-02.svg"
-          alt=""
-        />
+    <Hero />
+
+    <section id="about" class="diagonal-effect">
+      <div class="wrapper">
+        <h2>About</h2>
+        <p>
+          IT developer, creative and enthusiast. I like to work in group, solve
+          problems and develop solutions that - in a simple and cohesive way -
+          will make a positive impact.
+        </p>
       </div>
     </section>
 
-    <section
-      id="projects"
-      class="diagonal-effect animate__animated animate__bounceInRight"
-    >
+    <section id="projects">
       <div class="wrapper">
         <h2>Projects</h2>
         <div class="grid-container">
@@ -128,86 +117,11 @@ const projectData = [
       </div>
     </section>
 
-    <section
-      id="about"
-      class="wave-effect animate__animated animate__bounceInLeft"
-    >
-      <div class="wrapper">
-        <h2>About</h2>
-        <p>
-          IT developer, creative and enthusiast. I like to work in group, solve
-          problems and develop solutions that - in a simple and cohesive way -
-          will make a positive impact.
-        </p>
-        <div
-          class="d-flex flex-direction-row flex-wrap justify-center"
-          style="gap: 4rem; margin-block-start: 2rem;"
-        >
-          <div>
-            <a href="https://linkedin.com/in/fthomasvp">
-              <img
-                loading="lazy"
-                src="/assets/linkedin.png"
-                alt="LinkedIn"
-                width="45"
-                height="45"
-              />
-            </a>
-          </div>
-          <div>
-            <a href="https://github.com/fthomasvp"
-              ><img
-                loading="lazy"
-                src="/assets/github.png"
-                alt="GitHub"
-                width="45"
-                height="45"
-              /></a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
+    <Footer />
   </main>
 </Layout>
 
 <style>
-  .hero {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-
-    max-width: var(--breakpoint-lg);
-
-    margin-inline: auto;
-    padding-inline: 1em;
-    padding-block: 0;
-  }
-  .hero-introduction {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-  }
-  .hero-introduction h1 {
-    font-family: "Bebas Neue", cursive, var(--fontfamily--fallback);
-    font-size: 6rem;
-    letter-spacing: var(--letterspacing-wider);
-  }
-  .hero-introduction p {
-    font-family: "Bebas Neue", cursive, var(--fontfamily--fallback);
-    letter-spacing: var(--letterspacing-widest);
-  }
-  .hero-image {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-  }
-  .hero-image img {
-    max-width: 100%;
-
-    z-index: 1;
-  }
-
   /* TODO: improve this selector */
   .grid-container {
     display: grid;
@@ -229,53 +143,6 @@ const projectData = [
 
     .grid-col-2 {
       grid-template-columns: 1fr;
-    }
-  }
-
-  /* Breakpoints: Maybe I should add SASS to the project */
-  /* https://bholmes.dev/blog/alternative-to-css-variable-media-queries/ */
-
-  /* --breakpoint-sm: 30em; 480px */
-  /* --breakpoint-md: 48em; 768px */
-  /* --breakpoint-lg: 62em; 992px */
-  /* --breakpoint-xl: 80em; 1280px */
-  /* --breakpoint-2xl: 96em; 1536px */
-  @media (min-width: 0em) {
-    .hero-introduction h1 {
-      font-size: var(--fontsize-6xl);
-    }
-    .hero-introduction p {
-      font-size: var(--fontsize-xl);
-    }
-    .hero-image img {
-      height: 15rem;
-    }
-  }
-  @media (min-width: 30em) {
-    .hero-introduction h1 {
-      font-size: var(--fontsize-9xl);
-    }
-    .hero-image img {
-      height: 22rem;
-    }
-  }
-  @media (min-width: 48em) {
-    .hero {
-      flex-direction: row;
-    }
-    .hero-introduction {
-      justify-content: center;
-    }
-    .hero-introduction p {
-      font-size: var(--fontsize-2xl);
-    }
-    .hero-image img {
-      height: 29rem;
-    }
-  }
-  @media (min-width: 62em) {
-    .hero-image img {
-      height: 44rem;
     }
   }
 </style>

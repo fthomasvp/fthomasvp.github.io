@@ -1,0 +1,111 @@
+<section class="hero">
+  <div class="hero__introduction animate__animated animate__fadeInLeft">
+    <h1>Hi, I'm</h1>
+    <h1>Fellipe</h1>
+    <p>Creative developer &#x2022; Enthusiast</p>
+  </div>
+  <div class="hero__image animate__animated animate__fadeInDown">
+    <picture>
+      <source
+        media="(max-width: 480px)"
+        srcset="assets/images/profile-fthomasvp-small.jpg"
+      />
+      <source
+        media="(max-width: 992px)"
+        srcset="assets/images/profile-fthomasvp-medium.jpg"
+      />
+      <source
+        media="(min-width: 1280px)"
+        srcset="assets/images/profile-fthomasvp-large.jpg"
+      />
+      <img
+        loading="lazy"
+        src="assets/images/profile-fthomasvp-large.jpg"
+        alt="Fellipe smiling on a yellow t-shirt"
+      />
+    </picture>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2em;
+
+    max-width: var(--breakpoints-lg);
+
+    margin-inline: auto;
+    padding-inline: 1em;
+    padding-block: 4em;
+  }
+  .hero__introduction {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .hero__introduction h1 {
+    font-family: "Bebas Neue", cursive, var(--fontfamily--fallback);
+    font-size: 6rem;
+    letter-spacing: var(--letterspacings-wider);
+    line-height: var(--lineheights-shorter);
+  }
+  .hero__introduction p {
+    font-family: "Bebas Neue", cursive, var(--fontfamily--fallback);
+    letter-spacing: var(--letterspacings-widest);
+  }
+  .hero__image {
+    display: flex;
+    justify-content: center;
+
+    flex-grow: 1;
+  }
+  .hero__image img {
+    z-index: var(--zIndices-docked);
+
+    max-width: 100%;
+
+    border-top-right-radius: 250px;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 250px;
+    border-bottom-left-radius: 300px;
+
+    /* filter: drop-shadow(offset-x offset-y blur-radius color); */
+    filter: drop-shadow(4px 8px 8px hsl(0deg 0% 0% / 0.38));
+  }
+
+  @media (min-width: 0em) {
+    .hero__introduction h1 {
+      font-size: var(--fontsizes-6xl);
+    }
+    .hero__introduction p {
+      font-size: var(--fontsizes-xl);
+    }
+    .hero__image img {
+      height: 15rem;
+    }
+  }
+  @media (min-width: 30em) {
+    .hero__introduction h1 {
+      font-size: var(--fontsizes-9xl);
+    }
+    .hero__image img {
+      height: 22rem;
+    }
+  }
+  @media (min-width: 48em) {
+    .hero {
+      flex-direction: row;
+    }
+    .hero__introduction {
+      justify-content: center;
+    }
+    .hero__introduction p {
+      font-size: var(--fontsizes-2xl);
+    }
+    .hero__image img {
+      height: 28rem;
+    }
+  }
+</style>
