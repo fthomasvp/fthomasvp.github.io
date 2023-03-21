@@ -15,10 +15,10 @@ const { cover, title, description, techs } = Astro.props as Card;
 ---
 
 <div class="card">
-  <img loading="lazy" class="card__cover" src={cover.source} alt={cover.alt} />
+  <img loading="lazy" class="image" src={cover.source} alt={cover.alt} />
 
-  <div class="card__body">
-    <div class="card__icons">
+  <div class="body">
+    <div class="icons">
       {
         techs.map((item) => (
           <img
@@ -32,38 +32,41 @@ const { cover, title, description, techs } = Astro.props as Card;
       }
     </div>
 
-    <p class="card__title">{title.toUpperCase()}</p>
-    <p class="card__description"><em>{description}</em></p>
+    <p class="title">{title.toUpperCase()}</p>
+    <p class="description"><em>{description}</em></p>
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import "../styles/baseTheme.scss";
+
   .card {
     border: 0px solid transparent;
-    border-radius: var(--radii-base);
+    border-radius: $radii-base;
 
     box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
-  }
-  .card__cover {
-    max-width: 100%;
 
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-  }
-  .card__body {
-    padding-inline: 0.5em;
-    padding-block: 0.5em;
-  }
-  .card__icons {
-    padding-block-end: 0.5em;
-  }
-  .card__icons > img {
-    border-radius: 50%;
-  }
-  .card__title {
-    font-weight: var(--fontweights-bold);
-    font-size: var(--fontsizes-lg);
+    .image {
+      max-width: 100%;
 
-    padding-block-end: 0.25em;
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+    .body {
+      padding-inline: 0.5em;
+      padding-block: 0.5em;
+    }
+    .icons {
+      padding-block-end: 0.5em;
+    }
+    .icons > img {
+      border-radius: $radii-full;
+    }
+    .title {
+      font-weight: $fontweights-bold;
+      font-size: $fontsizes-lg;
+
+      padding-block-end: 0.25em;
+    }
   }
 </style>
