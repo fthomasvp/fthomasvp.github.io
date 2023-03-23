@@ -1,0 +1,81 @@
+<section id="about" class="about">
+  <div class="wrapper">
+    <h2>About</h2>
+
+    <div class="soft-skills__container">
+      <div class="soft-skills">
+        <div class="skill">
+          <h3>Creativity</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, sit?
+            Deleniti maxime voluptatem repellendus, ducimus tempora quae
+            eligendi? Dolor reprehenderit delectus aut ratione? Dicta, quod
+            corporis rem veritatis adipisci possimus.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>Team Player</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, sit?
+            Deleniti maxime voluptatem repellendus, ducimus tempora quae
+            eligendi? Dolor reprehenderit delectus aut ratione? Dicta, quod
+            corporis rem veritatis adipisci possimus.
+          </p>
+        </div>
+
+        <div class="skill">
+          <h3>Adaptability</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, sit?
+            Deleniti maxime voluptatem repellendus, ducimus tempora quae
+            eligendi? Dolor reprehenderit delectus aut ratione? Dicta, quod
+            corporis rem veritatis adipisci possimus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../styles/baseTheme.scss";
+
+  .about {
+    .soft-skills__container {
+      display: flex;
+
+      .soft-skills {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .skill {
+          margin-block: 0.5em;
+          margin-inline: 0.5em;
+          padding-block: 0.75em;
+          padding-inline: 0.5em;
+
+          display: flex;
+          flex-direction: column;
+
+          h3 {
+            text-align: center;
+          }
+
+          p {
+            line-height: $lineheights-7;
+          }
+        }
+
+        @media (min-width: 0em) {
+        }
+        @media (min-width: $breakpoints-sm) {
+        }
+        @media (min-width: $breakpoints-md) {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+</style>
