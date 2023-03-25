@@ -1,0 +1,237 @@
+---
+const projectImage =
+  "https://images.unsplash.com/photo-1636955735635-b4c0fd54f360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
+const techIconUrl =
+  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80";
+const techIconAlt = "Blue React";
+---
+
+<section id="projects">
+  <div class="wrapper">
+    <h2>Projects</h2>
+    <div class="projects__container">
+      <div class="projects">
+        <div class="project">
+          <div class="visual">
+            <div class="image">
+              <!-- Add images with different sizes -->
+              <img
+                loading="lazy"
+                class="image"
+                src={projectImage}
+                alt="Login page from Agenda application"
+              />
+            </div>
+            <div class="technologies">
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+            </div>
+          </div>
+
+          <div class="details">
+            <p class="title"><strong>AGENDA</strong></p>
+            <p class="description">
+              Have you ever had problems to book any common area in your
+              building? Agenda is the best solution to help you with that!
+            </p>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="visual">
+            <div class="image">
+              <img
+                loading="lazy"
+                class="image"
+                src={projectImage}
+                alt={techIconAlt}
+              />
+            </div>
+            <div class="technologies">
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+            </div>
+          </div>
+
+          <div class="details">
+            <p class="title"><strong>PROJECT TITLE</strong></p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+              veritatis libero necessitatibus quo nemo. Nisi minus nemo unde
+              voluptates. Quos reiciendis, ad quibusdam saepe quasi eum laborum
+              vero veritatis ea.
+            </p>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="visual">
+            <div class="image">
+              <img
+                loading="lazy"
+                class="image"
+                src={projectImage}
+                alt={techIconAlt}
+              />
+            </div>
+            <div class="technologies">
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+              <img
+                loading="lazy"
+                class="image"
+                src={techIconUrl}
+                alt={techIconAlt}
+              />
+            </div>
+          </div>
+
+          <div class="details">
+            <p class="title"><strong>PROJECT TITLE</strong></p>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+              veritatis libero necessitatibus quo nemo. Nisi minus nemo unde
+              voluptates. Quos reiciendis, ad quibusdam saepe quasi eum laborum
+              vero veritatis ea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style lang="scss">
+    @import "../styles/base.scss";
+
+    .projects__container {
+      display: flex;
+
+      .projects {
+        display: flex;
+        flex-direction: column;
+        gap: $space-7;
+
+        padding-inline: $space-3;
+        padding-block: $space-3;
+
+        @media (min-width: $breakpoints-md) {
+          gap: 0;
+        }
+
+        .project {
+          border: 1px solid $colors-black-rich;
+          border-radius: $radii-xl;
+          padding-inline: $space-3;
+          padding-block: $space-3;
+
+          display: flex;
+          flex-direction: column;
+
+          @media (min-width: $breakpoints-md) {
+            flex-direction: row;
+            gap: $space-8;
+
+            border: none;
+            border-radius: 0;
+
+            padding-block: $space-12;
+
+            &:nth-child(even) {
+              flex-direction: row-reverse;
+            }
+          }
+
+          .visual {
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: $breakpoints-md) {
+              flex: 1;
+            }
+
+            .image {
+              img {
+                max-width: 100%;
+
+                border-radius: $radii-md;
+              }
+            }
+            .technologies {
+              padding-block-end: $space-2;
+
+              @media (min-width: $breakpoints-md) {
+                display: flex;
+                justify-content: center;
+              }
+
+              img {
+                border-radius: $radii-full;
+
+                margin-inline-end: $space-1;
+
+                width: 45px;
+                height: 45px;
+              }
+            }
+          }
+          .details {
+            @media (min-width: $breakpoints-md) {
+              display: flex;
+              flex-direction: column;
+              flex: 0.6;
+            }
+
+            .title {
+              font-weight: $fontweights-bold;
+              font-size: $fontsizes-lg;
+
+              padding-block-end: 0.25em;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</section>

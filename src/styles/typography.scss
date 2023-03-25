@@ -1,4 +1,4 @@
-//  Font sizes
+// Font sizes
 $fontsizes-xs: 0.75rem;
 $fontsizes-sm: 0.875rem;
 $fontsizes-md: 1rem;
@@ -13,7 +13,7 @@ $fontsizes-7xl: 4.5rem;
 $fontsizes-8xl: 6rem;
 $fontsizes-9xl: 8rem;
 
-//  Font weights
+// Font weights
 $fontweights-hairline: 100;
 $fontweights-thin: 200;
 $fontweights-light: 300;
@@ -24,7 +24,7 @@ $fontweights-bold: 700;
 $fontweights-extrabold: 800;
 $fontweights-black: 900;
 
-//  Line heights
+// Line heights
 $lineheights-normal: "normal";
 $lineheights-none: 1;
 $lineheights-shorter: 1.25;
@@ -41,7 +41,7 @@ $lineheights-8: 2rem;
 $lineheights-9: 2.25rem;
 $lineheights-10: 2.5rem;
 
-//  Letter spacings
+// Letter spacings
 $letterspacings-tighter: -0.05em;
 $letterspacings-tight: -0.025em;
 $letterspacings-normal: 0;
@@ -50,5 +50,31 @@ $letterspacings-wider: 0.05em;
 $letterspacings-widest: 0.1em;
 
 // Fonts
+@font-face {
+  font-family: "Poppins";
+  font-weight: $fontweights-normal;
+  font-style: normal;
+  src: url("assets/fonts/poppins-regular-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: $fontweights-medium;
+  font-style: normal;
+  src: url("assets/fonts/poppins-medium-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: $fontweights-bold;
+  font-style: normal;
+  src: url("assets/fonts/poppins-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-weight: $fontweights-normal;
+  font-style: normal;
+  src: url("assets/fonts/bebasneue-regular-webfont.woff") format("woff");
+}
+
 $fontfamily--fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;

@@ -38,7 +38,7 @@ const { cover, title, description, techs } = Astro.props as Card;
 </div>
 
 <style lang="scss">
-  @import "../styles/baseTheme.scss";
+  @import "../styles/base.scss";
 
   .card {
     border: 0px solid transparent;
@@ -53,20 +53,22 @@ const { cover, title, description, techs } = Astro.props as Card;
       border-top-left-radius: 2px;
     }
     .body {
-      padding-inline: 0.5em;
-      padding-block: 0.5em;
-    }
-    .icons {
-      padding-block-end: 0.5em;
-    }
-    .icons > img {
-      border-radius: $radii-full;
-    }
-    .title {
-      font-weight: $fontweights-bold;
-      font-size: $fontsizes-lg;
+      padding-inline: $space-2;
+      padding-block: $space-2;
 
-      padding-block-end: 0.25em;
+      .icons {
+        padding-block-end: $space-2;
+
+        img {
+          border-radius: $radii-full;
+        }
+      }
+      .title {
+        font-weight: $fontweights-bold;
+        font-size: $fontsizes-lg;
+
+        padding-block-end: 0.25em;
+      }
     }
   }
 </style>

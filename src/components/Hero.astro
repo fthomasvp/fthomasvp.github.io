@@ -28,19 +28,19 @@
 </section>
 
 <style lang="scss">
-  @import "../styles/baseTheme.scss";
+  @import "../styles/base.scss";
 
   .hero {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 2em;
+    gap: $space-4;
 
     max-width: $breakpoints-lg;
 
     margin-inline: auto;
-    padding-inline: 1em;
-    padding-block: 4em;
+    padding-inline: $space-4;
+    padding-block: $space-16;
 
     .introduction {
       display: flex;
@@ -48,7 +48,7 @@
       flex-direction: column;
 
       h1 {
-        font-size: 6rem;
+        font-size: $fontsizes-8xl;
         letter-spacing: $letterspacings-wider;
         line-height: $lineheights-shorter;
       }
@@ -70,10 +70,7 @@
 
         max-width: 100%;
 
-        border-top-right-radius: 250px;
-        border-top-left-radius: 80px;
-        border-bottom-right-radius: 250px;
-        border-bottom-left-radius: 300px;
+        border-radius: 51% 49% 19% 81% / 56% 65% 35% 44%;
 
         filter: drop-shadow(4px 8px 8px hsl(0deg 0% 0% / 0.38));
       }

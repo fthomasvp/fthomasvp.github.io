@@ -1,9 +1,6 @@
 <footer id="footer" class="wave-effect">
   <div class="wrapper">
-    <div
-      class="d-flex flex-direction-row flex-wrap justify-center"
-      style="gap: 4rem; margin-block-start: 2rem;"
-    >
+    <div class="social-networks">
       <div>
         <a href="https://linkedin.com/in/fthomasvp">
           <img
@@ -29,3 +26,17 @@
     </div>
   </div>
 </footer>
+
+<style lang="scss">
+  @import "../styles/base.scss";
+
+  .social-networks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-16;
+
+    margin-block-start: $space-8;
+  }
+</style>

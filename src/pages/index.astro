@@ -1,140 +1,16 @@
 ---
 import About from "../components/About.astro";
-import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
 import Layout from "../layouts/Layout.astro";
-
-const projectImage =
-  "https://images.unsplash.com/photo-1636955735635-b4c0fd54f360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
-const techIconUrl =
-  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80";
-const techIconAlt = "Blue React";
-const projectDescription =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis non, soluta repellendus ipsum id obcaecati totam unde iure omnis possimus quidem laborum autem quae velit amet. Ut, velit nam";
-
-const projectData = [
-  {
-    cover: {
-      source: projectImage,
-      alt: "Agenda Cover",
-    },
-    title: "Agenda",
-    description:
-      "Have you ever had problems to book any common area in your building? Agenda is the best solution to help you with that!",
-    techs: [
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-      {
-        source: techIconUrl,
-        alt: techIconAlt,
-      },
-    ],
-  },
-  {
-    cover: {
-      source: projectImage,
-      alt: "Projeto 2 Cover",
-    },
-    title: "Projeto 2",
-    description: projectDescription,
-    techs: [
-      {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React",
-      },
-    ],
-  },
-  {
-    cover: {
-      source: projectImage,
-      alt: "Projeto 3 Cover",
-    },
-    title: "Projeto 3",
-    description: projectDescription,
-    techs: [
-      {
-        source:
-          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-        alt: "React",
-      },
-    ],
-  },
-];
 ---
 
 <Layout title="Fellipe Pires">
   <main>
     <Hero />
-
     <About />
-
-    <section id="projects">
-      <div class="wrapper">
-        <h2>Projects</h2>
-        <div class="grid-container">
-          {projectData.map((item) => <Card {...item} />)}
-        </div>
-      </div>
-    </section>
-
+    <Projects />
     <Footer />
   </main>
 </Layout>
-
-<style>
-  /* TODO: improve this selector */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-  }
-
-  .grid-col-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: 600px) {
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 4rem;
-      place-items: center;
-    }
-
-    .grid-col-2 {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
