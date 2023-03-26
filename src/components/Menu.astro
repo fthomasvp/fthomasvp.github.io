@@ -1,0 +1,66 @@
+---
+---
+
+<header>
+  <p class="logo">
+    <a href="/">F.P</a>
+  </p>
+
+  <nav>
+    <ul class="menu">
+      <li class="item">
+        <a href="#about">About</a>
+      </li>
+      <li class="item">
+        <a href="#projects">Projects</a>
+      </li>
+      <li class="item">
+        <a href="#footer">Footer</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  @import "../styles/base.scss";
+
+  a {
+    text-decoration: none;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    z-index: $zIndices-sticky;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "Poppins", sans-serif, $fontfamily--fallback;
+
+    padding-block: $space-4;
+    padding-inline: $space-4;
+
+    backdrop-filter: blur(20px);
+
+    .logo {
+      font-size: $fontsizes-xl;
+      font-weight: $fontweights-bold;
+      letter-spacing: $letterspacings-widest;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: $space-4;
+
+      list-style-type: none;
+
+      .item {
+        font-size: $fontsizes-md;
+        font-weight: $fontweights-medium;
+      }
+    }
+  }
+</style>
