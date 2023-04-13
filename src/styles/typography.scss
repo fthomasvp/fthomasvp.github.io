@@ -76,5 +76,7 @@ $letterspacings-widest: 0.1em;
   src: url("assets/fonts/bebasneue-regular-webfont.woff") format("woff");
 }
 
-$fontfamily--fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
+$fontfamily-fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$fontfamily-poppins: "Poppins", sans-serif, $fontfamily-fallback;
+$fontfamily-bebas-neue: "Bebas Neue", cursive, $fontfamily-fallback;
