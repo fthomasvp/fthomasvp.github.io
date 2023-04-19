@@ -117,16 +117,12 @@ const { title } = Astro.props;
     align-items: center;
   }
 
-  .d-grid {
-    display: grid;
-  }
-
   .text-center {
     text-align: center;
   }
 
   .wrapper {
-    max-width: 60em;
+    max-width: 70em;
 
     margin-inline: auto;
     /* `inline` represents "left" and "right" */
@@ -157,7 +153,7 @@ const { title } = Astro.props;
   /* Diagonal background effect */
   .diagonal-effect {
     position: relative;
-    isolation: isolate;
+    isolation: auto;
 
     &::after {
       content: "";
