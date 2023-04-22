@@ -2,23 +2,26 @@
 ---
 
 <header>
-  <p class="logo">
+  <p class="nav-branding">
     <a href="/">F.P</a>
   </p>
 
-  <nav>
-    <ul class="menu">
-      <li class="item">
-        <a href="#about">About</a>
+  <nav class="navbar">
+    <!-- data-visible="false" (to be changed with JS) -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
       </li>
-      <li class="item">
-        <a href="#projects">Projects</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#projects">Projects</a>
       </li>
-      <li class="item">
-        <a href="#contact">Contact</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
     </ul>
   </nav>
+
+  <div role="button" class="mobile-nav"></div>
 </header>
 
 <style lang="scss">
@@ -29,7 +32,7 @@
   }
 
   header {
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: $zIndices-sticky;
 
@@ -37,31 +40,111 @@
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     font-family: $fontfamily-bebas-neue;
     letter-spacing: $letterspacings-widest;
 
-    padding-block: $space-4;
-    padding-inline: $space-8;
+    padding-block: 1rem;
+    padding-inline: 2rem;
 
-    backdrop-filter: blur(20px);
+    .navbar {
+      display: flex;
+    }
 
-    .logo {
-      font-size: $fontsizes-2xl;
+    .nav-branding {
+      font-size: $fontsizes-4xl;
       font-weight: $fontweights-bold;
       letter-spacing: $letterspacings-widest;
+
+      a {
+        color: $colors-blue-oxford;
+      }
     }
-    .menu {
+    .nav-menu {
       display: flex;
       justify-content: center;
-      gap: $space-4;
+      gap: $space-14;
 
       list-style-type: none;
 
-      .item {
+      .nav-item {
         font-size: $fontsizes-2xl;
         font-weight: $fontweights-medium;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+      .nav-link {
+        color: $colors-blue-oxford;
+
+        &:hover {
+          color: $colors-blue-yale;
+
+          border-bottom: 2px solid $colors-blue-yale;
+        }
+      }
+    }
+    .mobile-nav {
+      display: none;
+
+      background-image: url("assets/icons/bars-solid.svg");
+      background-repeat: no-repeat;
+
+      aspect-ratio: 1;
+      width: $space-7;
+
+      cursor: pointer;
+    }
+
+    @media (max-width: $breakpoints-md) {
+      .nav-menu {
+        position: absolute;
+        top: $space-16;
+        left: -100%;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        width: 100%;
+
+        transition: 0.3s;
+
+        background-color: $colors-white;
+
+        padding-block: $space-12;
+
+        &.active {
+          left: 0;
+        }
+      }
+
+      .mobile-nav {
+        display: block;
       }
     }
   }
 </style>
+
+<script>
+  const menuButton = document.querySelector(".mobile-nav");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (menuButton && navMenu) {
+    menuButton.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    if (navLinks.length > 0) {
+      navLinks.forEach((navLink) => {
+        navLink.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        });
+      });
+    }
+  }
+</script>
