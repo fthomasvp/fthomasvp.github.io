@@ -80,6 +80,8 @@
 
   @media (min-width: 0em) {
     .introduction {
+      padding-block-end: $space-8;
+
       h1 {
         font-size: $fontsizes-6xl;
       }
@@ -124,6 +126,13 @@
         img {
           height: 28rem;
         }
+      }
+    }
+  }
+  @media (min-width: $breakpoints-md) {
+    .hero {
+      .introduction {
+        padding-block-end: 0;
       }
     }
   }
