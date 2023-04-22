@@ -89,12 +89,15 @@ const { title } = Astro.props;
     font-family: $fontfamily-bebas-neue;
   }
 
-  @media (min-width: 30em) {
+  @media (min-width: $breakpoints-sm) {
     body {
       font-size: $fontsizes-lg;
     }
   }
 
+  /* 
+    Utility classes 
+  */
   .d-flex {
     display: flex;
   }
@@ -129,7 +132,9 @@ const { title } = Astro.props;
     padding-inline: $space-5;
   }
 
-  /* Wave background effect */
+  /*
+    Wave background effect
+  */
   .wave-effect {
     position: relative;
 
@@ -146,11 +151,14 @@ const { title } = Astro.props;
       transform: rotateX(180deg);
 
       background: $colors-gold;
+      mask-image: url("assets/images/wave-headline-01.svg");
       -webkit-mask-image: url("assets/images/wave-headline-01.svg");
     }
   }
 
-  /* Diagonal background effect */
+  /*
+    Diagonal background effect
+  */
   .diagonal-effect {
     position: relative;
     isolation: auto;
@@ -168,7 +176,9 @@ const { title } = Astro.props;
     }
   }
 
-  /* Highlight animation */
+  /*
+    Highlight animation
+  */
   .text-highlight {
     background: linear-gradient(
       to right,
