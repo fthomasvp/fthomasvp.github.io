@@ -3,7 +3,7 @@
 
 <header>
   <p class="nav-branding">
-    <a href="/">F.P</a>
+    <a href="/">F.P.</a>
   </p>
 
   <nav class="navbar">
@@ -21,7 +21,7 @@
     </ul>
   </nav>
 
-  <div role="button" class="mobile-nav"></div>
+  <div class="mobile-nav" role="button" tabindex="0"></div>
 </header>
 
 <style lang="scss">
@@ -72,24 +72,27 @@
         font-size: $fontsizes-2xl;
         font-weight: $fontweights-medium;
 
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        transition-property: all;
+
         &:hover {
           transform: scale(1.15);
+
+          .nav-link {
+            border-bottom: 2px solid $colors-blue-oxford;
+          }
         }
       }
       .nav-link {
         color: $colors-blue-oxford;
-
-        &:hover {
-          color: $colors-blue-yale;
-
-          border-bottom: 2px solid $colors-blue-yale;
-        }
       }
     }
     .mobile-nav {
       display: none;
 
-      background-image: url("assets/icons/bars-solid.svg");
+      background-image: url("/assets/icons/bars-solid.svg");
       background-repeat: no-repeat;
 
       aspect-ratio: 1;
@@ -105,16 +108,23 @@
         left: -100%;
 
         flex-direction: column;
+        justify-content: flex-start;
 
         text-align: center;
 
         width: 100%;
+        height: 100vmax;
 
-        transition: 0.3s;
+        padding-block: $space-16;
 
         background-color: $colors-white;
 
-        padding-block: $space-12;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0.125s;
+        transition-property: all;
+
+        overflow: hidden;
 
         &.active {
           left: 0;
@@ -129,12 +139,18 @@
 </style>
 
 <script>
-  const menuButton = document.querySelector(".mobile-nav");
+  const navBar = document.querySelector(".navbar");
+  const mobileNav = document.querySelector(".mobile-nav");
   const navMenu = document.querySelector(".nav-menu");
 
-  if (menuButton && navMenu) {
-    menuButton.addEventListener("click", () => {
+  if (mobileNav && navMenu && navBar) {
+    mobileNav.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+    });
+    mobileNav.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        navMenu.classList.toggle("active");
+      }
     });
 
     const navLinks = document.querySelectorAll(".nav-link");

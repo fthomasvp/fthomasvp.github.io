@@ -2,7 +2,7 @@
   <div class="introduction animate__animated animate__fadeInLeft">
     <h1>Hi, I'm</h1>
     <h1>Fellipe</h1>
-    <p>A front-end developer focused on delivering great user experience.</p>
+    <p>A front-end developer with focus on deliver great user experience.</p>
   </div>
   <div class="image animate__animated animate__fadeInDown">
     <picture>
@@ -40,13 +40,16 @@
 
     margin-inline: auto;
     padding-inline: $space-4;
-    padding-block-start: $space-32;
-    padding-block-end: $space-16;
+    padding-block: $space-48;
 
     .introduction {
       display: flex;
       flex: 1;
       flex-direction: column;
+
+      padding-block-end: $space-8;
+
+      text-align: center;
 
       h1 {
         font-size: $fontsizes-8xl;
@@ -67,8 +70,6 @@
       flex-grow: 1;
 
       img {
-        z-index: $zIndices-docked;
-
         max-width: 100%;
 
         border-radius: 51% 49% 19% 81% / 56% 65% 35% 44%;
@@ -76,47 +77,43 @@
         filter: drop-shadow(4px 8px 8px hsl(0deg 0% 0% / 0.38));
       }
     }
-  }
 
-  @media (min-width: 0em) {
-    .introduction {
-      padding-block-end: $space-8;
-
-      h1 {
-        font-size: $fontsizes-6xl;
+    @media (max-width: $breakpoints-sm) {
+      .introduction {
+        h1 {
+          font-size: $fontsizes-6xl;
+        }
+        p {
+          font-size: $fontsizes-xl;
+        }
       }
 
-      p {
-        font-size: $fontsizes-xl;
-      }
-    }
-
-    .image {
-      img {
-        height: 15rem;
+      .image {
+        img {
+          height: 15 * $space-4;
+        }
       }
     }
-  }
-  @media (min-width: $breakpoints-sm) {
-    .introduction {
-      h1 {
-        font-size: $fontsizes-9xl;
+    @media (min-width: $breakpoints-sm) {
+      .image {
+        img {
+          height: 20 * $space-4;
+        }
       }
     }
-
-    .image {
-      img {
-        height: 22rem;
-      }
-    }
-  }
-  @media (min-width: $breakpoints-md) {
-    .hero {
+    @media (min-width: $breakpoints-lg) {
       flex-direction: row;
 
       .introduction {
         justify-content: center;
 
+        text-align: left;
+
+        padding-block-end: 0;
+
+        h1 {
+          font-size: $fontsizes-9xl;
+        }
         p {
           font-size: $fontsizes-2xl;
         }
@@ -124,15 +121,8 @@
 
       .image {
         img {
-          height: 28rem;
+          height: 28 * $space-4;
         }
-      }
-    }
-  }
-  @media (min-width: $breakpoints-md) {
-    .hero {
-      .introduction {
-        padding-block-end: 0;
       }
     }
   }
