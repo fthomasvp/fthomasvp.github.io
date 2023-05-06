@@ -89,6 +89,26 @@ const { title } = Astro.props;
     font-family: $fontfamily-bebas-neue;
   }
 
+  button {
+    cursor: pointer;
+    outline: transparent solid 1px;
+
+    border: none;
+    border-radius: $radii-md;
+
+    font-weight: $fontweights-semibold;
+    line-height: $lineheights-shorter;
+
+    padding-block: $space-2;
+    padding-inline: $space-4;
+
+    height: $space-10;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px $colors-yellow-mikado;
+    }
+  }
+
   @media (min-width: $breakpoints-sm) {
     body {
       font-size: $fontsizes-lg;
@@ -170,7 +190,7 @@ const { title } = Astro.props;
       inset: 0;
       z-index: $zIndices-hide;
 
-      background: $colors-gold;
+      background-color: $colors-gold;
 
       transform: skewY(-4deg);
     }

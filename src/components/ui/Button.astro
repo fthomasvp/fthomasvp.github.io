@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title: string;
+  variant: "solid" | "outline";
+}
+
+const { title, variant } = Astro.props;
+---
+
+<button aria-label={title} class={`button-${variant}`}>
+  {title}
+</button>
+
+<style lang="scss">
+  @import "../../styles/base.scss";
+
+  .button-solid {
+    background-color: $colors-blue-yale;
+    color: $colors-white;
+
+    &:hover {
+      background-color: darken($colors-blue-yale, 2.5%);
+    }
+    &:active {
+      background-color: darken($colors-blue-yale, 5%);
+    }
+  }
+
+  .button-outline {
+    background-color: $colors-white;
+    color: $colors-blue-yale;
+    border: 1px solid $colors-blue-yale;
+
+    &:hover {
+      background-color: lighten($colors-blue-yale, 75%);
+    }
+    &:active {
+      background-color: lighten($colors-blue-yale, 72.5%);
+    }
+  }
+</style>
