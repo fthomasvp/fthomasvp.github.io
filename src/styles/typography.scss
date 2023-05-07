@@ -55,18 +55,21 @@ $letterspacings-widest: 0.1em;
   font-weight: $fontweights-normal;
   font-style: normal;
   src: url("/assets/fonts/poppins-regular-webfont.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   font-weight: $fontweights-medium;
   font-style: normal;
   src: url("/assets/fonts/poppins-medium-webfont.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   font-weight: $fontweights-bold;
   font-style: normal;
   src: url("/assets/fonts/poppins-bold-webfont.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
@@ -74,6 +77,7 @@ $letterspacings-widest: 0.1em;
   font-weight: $fontweights-normal;
   font-style: normal;
   src: url("/assets/fonts/bebasneue-regular-webfont.woff") format("woff");
+  font-display: swap;
 }
 
 $fontfamily-fallback: system-ui, -apple-system, BlinkMacSystemFont, Roboto,

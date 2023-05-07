@@ -2,14 +2,32 @@
 export interface Props {
   title: string;
   variant: "solid" | "outline";
+  href?: string;
+  target?: "_blank" | "_parent" | "_self" | "_top";
+  rel?:
+    | "alternate"
+    | "author"
+    | "bookmark"
+    | "external"
+    | "help"
+    | "license"
+    | "next"
+    | "nofollow"
+    | "noreferrer"
+    | "noopener"
+    | "prev"
+    | "search"
+    | "tag";
 }
 
-const { title, variant } = Astro.props;
+const { href, title, target, rel, variant } = Astro.props;
 ---
 
-<button aria-label={title} class={`button-${variant}`}>
-  {title}
-</button>
+<a href={href} target={target} rel={rel}>
+  <button aria-label={title} class={`button-${variant}`}>
+    {title}
+  </button>
+</a>
 
 <style lang="scss">
   @import "../../styles/base.scss";

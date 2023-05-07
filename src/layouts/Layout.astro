@@ -90,19 +90,33 @@ const { title } = Astro.props;
   }
 
   button {
+    position: relative;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    vertical-align: middle;
+
     cursor: pointer;
     outline: transparent solid 1px;
+    appearance: none;
+    user-select: none;
 
     border: none;
     border-radius: $radii-md;
-
-    font-weight: $fontweights-semibold;
-    line-height: $lineheights-shorter;
-
-    padding-block: $space-2;
     padding-inline: $space-4;
 
+    width: 100%;
     height: $space-10;
+    min-width: $space-10;
+
+    font-family: inherit;
+    font-size: $fontsizes-md;
+    font-weight: $fontweights-semibold;
+    line-height: $lineheights-shorter;
+    white-space: nowrap;
 
     &:focus-visible {
       box-shadow: 0 0 0 3px $colors-yellow-mikado;
