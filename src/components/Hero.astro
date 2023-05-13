@@ -6,8 +6,6 @@ const profileImages = {
 };
 ---
 
-<!-- srcset={`${item.cover.sources.small} 290w, ${item.cover.sources.medium} 723w, ${item.cover.sources.large} 1140w`}
-      sizes="(min-width: 1340px) 723px, (min-width: 780px) 55.56vw, calc(100vw - 66px)" -->
 <section id="hero" class="hero">
   <div class="introduction animate__animated animate__fadeInLeft">
     <h1>Hi, I'm Fellipe</h1>
@@ -69,8 +67,7 @@ const profileImages = {
 
       img {
         max-width: 100%;
-
-        border-radius: 51% 49% 19% 81% / 56% 65% 35% 44%;
+        object-fit: contain;
 
         filter: drop-shadow(4px 8px 8px hsl(0deg 0% 0% / 0.38));
       }
