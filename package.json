@@ -8,11 +8,11 @@
     "build": "astro build",
     "preview": "astro preview --host",
     "astro": "astro",
+    "astro:check": "astro check",
     "prettier": "prettier --write .",
     "lint": "eslint src/**/*.{js,ts,jsx,tsx,astro}"
   },
   "dependencies": {
-    "@astrojs/react": "^2.0.2",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "animate.css": "^4.1.1",
