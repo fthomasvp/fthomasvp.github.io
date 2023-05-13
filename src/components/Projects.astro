@@ -13,8 +13,8 @@ interface Project {
     alternativeText: string;
   };
   icons: Array<IconProps["name"]>;
-  appGithubUrl: string;
-  appDemoUrl: string;
+  githubUrl: string;
+  demoUrl: string;
 }
 
 /**
@@ -27,16 +27,16 @@ const projects: Project[] = [
       "Have you ever had problems to book any common area in your building? Agenda is the best solution to help you with that!",
     cover: {
       sources: {
-        small: "/assets/images/project-agenda-cover-small.jpg",
-        medium: "/assets/images/project-agenda-cover-medium.jpg",
-        large: "/assets/images/project-agenda-cover-large.jpg",
+        small: "/images/project-agenda-cover-small.jpg",
+        medium: "/images/project-agenda-cover-medium.jpg",
+        large: "/images/project-agenda-cover-large.jpg",
       },
       alternativeText: "Login page from Agenda application",
     },
     icons: ["html5", "css3", "typescript", "react"],
-    // TODO: update app links
-    appGithubUrl: "https://github.com/fthomasvp",
-    appDemoUrl: "https://github.com/fthomasvp",
+    // TODO: update links
+    githubUrl: "https://github.com/fthomasvp",
+    demoUrl: "https://github.com/fthomasvp",
   },
 ];
 ---
@@ -77,14 +77,14 @@ const projects: Project[] = [
                 <div class="actions">
                   <Button
                     title="Open Demo"
-                    href={item.appDemoUrl}
+                    href={item.demoUrl}
                     target="_blank"
                     rel="noopener"
                     variant="solid"
                   />
                   <Button
                     title="See on GitHub"
-                    href={item.appGithubUrl}
+                    href={item.githubUrl}
                     target="_blank"
                     rel="noopener"
                     variant="outline"
