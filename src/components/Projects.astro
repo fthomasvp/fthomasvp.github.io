@@ -70,9 +70,7 @@ const projects: Project[] = [
               </div>
 
               <div class="detail">
-                <p class="title">
-                  <strong>{item.title}</strong>
-                </p>
+                <h3>{item.title}</h3>
                 <p class="description">{item.description}</p>
                 <div class="actions">
                   <Button
@@ -165,10 +163,12 @@ const projects: Project[] = [
             display: flex;
             justify-content: center;
 
-            padding-block-end: $space-4;
+            margin-block-end: $space-4;
 
             @media (min-width: $breakpoints-md) {
               justify-content: center;
+
+              margin-block-end: 0;
             }
 
             .icon {
@@ -180,17 +180,17 @@ const projects: Project[] = [
         .detail {
           display: flex;
           flex-direction: column;
-          gap: $space-4;
+          gap: $space-6;
+
+          h3 {
+            margin-block: 0;
+          }
 
           @media (min-width: $breakpoints-md) {
             flex: 0.6;
             justify-content: center;
           }
 
-          .title {
-            font-weight: $fontweights-bold;
-            font-size: $fontsizes-lg;
-          }
           .actions {
             display: flex;
             flex-direction: row;
