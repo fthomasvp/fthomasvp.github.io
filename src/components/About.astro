@@ -23,7 +23,8 @@
           <h3>Team Player</h3>
           <p>
             From smaller to bigger ones. I have been working on teams since the
-            beginning of my career. Share and learn are part of my routine.
+            beginning of my career. Share and learn knowledge are part of my
+            routine.
           </p>
         </div>
         <div class="skill">
@@ -43,11 +44,17 @@
 
   .about {
     img {
-      width: 100%;
+      max-width: 100%;
       height: 100%;
 
       position: absolute;
       inset: 0;
+      /**
+       * When an element is absolute and it's behind another element,
+       * I'm not able to select the text content that is above it.
+       * See https://stackoverflow.com/questions/36674135/text-selection-on-a-element-behind-an-absolute-element
+       */
+      pointer-events: none;
 
       margin: auto;
 
