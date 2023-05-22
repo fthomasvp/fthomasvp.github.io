@@ -1,28 +1,46 @@
-<footer id="contact" class="contact" tabindex="-1">
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer" tabindex="-1">
   <div class="wrapper">
-    <div class="social-networks">
-      <div>
-        <a href="https://linkedin.com/in/fthomasvp">
-          <img
-            loading="lazy"
-            src="/images/linkedin.png"
-            alt="LinkedIn"
-            width="45"
-            height="45"
-          />
-        </a>
+    <div class="footer__container">
+      <a href="/">
+        <img
+          src="/android-chrome-192x192.png"
+          alt="Fellipe Pires home link"
+          width="48"
+          height="48"
+        />
+      </a>
+
+      <div class="social-networks">
+        <div>
+          <a href="https://linkedin.com/in/fthomasvp">
+            <img
+              loading="lazy"
+              src="/images/linkedin-white.png"
+              alt="LinkedIn"
+              width="42"
+              height="42"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://github.com/fthomasvp"
+            ><img
+              loading="lazy"
+              src="/images/github-white.png"
+              alt="GitHub"
+              width="42"
+              height="42"
+            /></a
+          >
+        </div>
       </div>
-      <div>
-        <a href="https://github.com/fthomasvp"
-          ><img
-            loading="lazy"
-            src="/images/github.png"
-            alt="GitHub"
-            width="45"
-            height="45"
-          /></a
-        >
-      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; {currentYear} Fellipe Pires</p>
     </div>
   </div>
 </footer>
@@ -30,17 +48,38 @@
 <style lang="scss">
   @import "../styles/base.scss";
 
-  .contact {
+  .footer {
     background-color: $colors-blue-yale;
-  }
 
-  .social-networks {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $space-16;
+    padding-block: $space-4;
 
-    margin-block-start: $space-8;
+    .footer__container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: $space-4;
+
+      margin-block-end: $space-4;
+
+      .social-networks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $space-8;
+      }
+
+      @media (min-width: $breakpoints-md) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .copyright {
+      color: $colors-white;
+      font-size: $fontsizes-xs;
+      text-align: center;
+    }
   }
 </style>
