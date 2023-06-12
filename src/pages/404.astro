@@ -1,0 +1,33 @@
+---
+import Button from "../components/ui/Button.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Not found - Fellipe Pires">
+  <div
+    class="d-flex flex-1 flex-column justify-center items-center"
+    style="height: 100vh; gap: 2rem;"
+  >
+    <div>
+      <img
+        src="/android-chrome-192x192.png"
+        alt="Fellipe Pires home link"
+        width="192"
+        height="192"
+      />
+    </div>
+
+    <div
+      class="d-flex flex-column items-center"
+      style="gap: 2rem; padding: 1.75rem;"
+    >
+      <div class="d-flex flex-column items-center">
+        <h1>4 0 4</h1>
+        <h3>Oops! The page you were looking for doesn't exist.</h3>
+        <p>You may have mistyped the address or the page may have moved.</p>
+      </div>
+
+      <Button title="Back to Home page" href="/" variant="outline" />
+    </div>
+  </div>
+</Layout>
