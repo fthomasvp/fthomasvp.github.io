@@ -13,12 +13,8 @@
     "lint": "eslint src/**/*.{js,ts,jsx,tsx,astro}"
   },
   "dependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
     "animate.css": "^4.1.1",
     "astro": "^2.0.14",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "sass": "^1.59.3"
   },
   "devDependencies": {
