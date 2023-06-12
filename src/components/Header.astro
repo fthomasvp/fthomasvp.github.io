@@ -1,6 +1,11 @@
 <header>
-  <a href="/">
-    <img src="/favicon.ico" alt="Fellipe Pires home link" />
+  <a class="d-flex" href="/">
+    <img
+      width="48"
+      height="48"
+      src="/favicon.ico"
+      alt="Fellipe Pires home link"
+    />
   </a>
 
   <nav class="navbar">
@@ -131,13 +136,14 @@
   const navBar = document.querySelector(".navbar");
   const mobileNav = document.querySelector(".mobile-nav");
   const navMenu = document.querySelector(".nav-menu");
+  const x = 0;
 
   if (mobileNav && navMenu && navBar) {
     mobileNav.addEventListener("click", () => {
       navMenu.classList.toggle("active");
     });
 
-    mobileNav.addEventListener("keypress", (e) => {
+    mobileNav.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         navMenu.classList.toggle("active");
       }

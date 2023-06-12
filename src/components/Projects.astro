@@ -14,7 +14,7 @@ interface Project {
   };
   icons: Array<IconProps["name"]>;
   githubUrl: string;
-  demoUrl: string;
+  demoUrl?: string;
 }
 
 /**
@@ -34,9 +34,7 @@ const projects: Project[] = [
       alternativeText: "Login page from Agenda application",
     },
     icons: ["html5", "css3", "typescript", "react"],
-    // TODO: update links
-    githubUrl: "https://github.com/fthomasvp",
-    demoUrl: "https://github.com/fthomasvp",
+    githubUrl: "https://github.com/fthomasvp/agenda-granharmonia-web",
   },
 ];
 ---
@@ -73,20 +71,24 @@ const projects: Project[] = [
                 <h3>{item.title}</h3>
                 <p class="description">{item.description}</p>
                 <div class="actions">
-                  <Button
-                    title="Live Demo"
-                    href={item.demoUrl}
-                    target="_blank"
-                    rel="noopener"
-                    variant="solid"
-                  />
-                  <Button
-                    title="See on GitHub"
-                    href={item.githubUrl}
-                    target="_blank"
-                    rel="noopener"
-                    variant="outline"
-                  />
+                  {item.demoUrl && (
+                    <Button
+                      title="Live Demo"
+                      href={item.demoUrl}
+                      target="_blank"
+                      rel="noopener"
+                      variant="solid"
+                    />
+                  )}
+                  {item.githubUrl && (
+                    <Button
+                      title="See on GitHub"
+                      href={item.githubUrl}
+                      target="_blank"
+                      rel="noopener"
+                      variant="outline"
+                    />
+                  )}
                 </div>
               </div>
             </div>

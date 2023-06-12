@@ -23,7 +23,7 @@ export interface Props {
 const { href, title, target, rel, variant } = Astro.props;
 ---
 
-<a href={href} target={target} rel={rel}>
+<a href={href} target={target} rel={rel} tabindex="-1">
   <button aria-label={title} class={`button-${variant}`}>
     {title}
   </button>
@@ -31,6 +31,10 @@ const { href, title, target, rel, variant } = Astro.props;
 
 <style lang="scss">
   @import "../../styles/base.scss";
+
+  a {
+    text-decoration: none;
+  }
 
   .button-solid {
     background-color: $colors-blue-yale;
