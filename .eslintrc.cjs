@@ -15,7 +15,14 @@ module.exports = {
       },
       rules: {
         "astro/no-unused-css-selector": "warn",
-        "no-unused-vars": "warn",
+        "no-unused-vars": [
+          "warn",
+          {
+            argsIgnorePattern: "^_",
+            varsIgnorePattern: "^_",
+            caughtErrorsIgnorePattern: "^_",
+          },
+        ],
       },
     },
   ],
