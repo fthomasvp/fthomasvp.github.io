@@ -23,11 +23,11 @@ export interface Props {
 const { href, title, target, rel, variant } = Astro.props;
 ---
 
-<a href={href} target={target} rel={rel} tabindex="-1">
-  <button aria-label={title} class={`button-${variant}`}>
+<div>
+  <a class={`button ${variant}`} href={href} target={target} rel={rel}>
     {title}
-  </button>
-</a>
+  </a>
+</div>
 
 <style lang="scss">
   @import "../../styles/base.scss";
@@ -36,28 +36,58 @@ const { href, title, target, rel, variant } = Astro.props;
     text-decoration: none;
   }
 
-  .button-solid {
-    background-color: $colors-blue-yale;
-    color: $colors-white;
+  .button {
+    position: relative;
 
-    &:hover {
-      background-color: darken($colors-blue-yale, 2.5%);
-    }
-    &:active {
-      background-color: darken($colors-blue-yale, 5%);
-    }
-  }
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    vertical-align: middle;
 
-  .button-outline {
-    background-color: $colors-white;
-    color: $colors-blue-yale;
-    border: 1px solid $colors-blue-yale;
+    cursor: pointer;
+    outline: transparent solid 1px;
+    appearance: none;
+    user-select: none;
 
-    &:hover {
-      background-color: lighten($colors-blue-yale, 75%);
+    border: none;
+    border-radius: $radii-md;
+    padding-inline: $space-4;
+
+    width: 100%;
+    height: $space-10;
+    min-width: $space-10;
+
+    font-family: inherit;
+    font-size: $fontsizes-md;
+    font-weight: $fontweights-semibold;
+    line-height: $lineheights-shorter;
+    white-space: nowrap;
+
+    &.outline {
+      background-color: $colors-white;
+      color: $colors-blue-yale;
+      border: 1px solid $colors-blue-yale;
+
+      &:hover {
+        background-color: lighten($colors-blue-yale, 75%);
+      }
+      &:active {
+        background-color: lighten($colors-blue-yale, 72.5%);
+      }
     }
-    &:active {
-      background-color: lighten($colors-blue-yale, 72.5%);
+
+    &.solid {
+      background-color: $colors-blue-yale;
+      color: $colors-white;
+
+      &:hover {
+        background-color: darken($colors-blue-yale, 2.5%);
+      }
+      &:active {
+        background-color: darken($colors-blue-yale, 5%);
+      }
     }
   }
 </style>
