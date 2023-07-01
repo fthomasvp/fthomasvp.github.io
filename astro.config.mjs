@@ -6,7 +6,8 @@ export default defineConfig({
   site: "https://fthomasvp.github.io",
   server: {
     headers: {
-      "Cache-Control": "max-age=31536000",
+      "Cache-Control":
+        import.meta.env.MODE === "production" ? "max-age=31536000" : "no-cache",
     },
   },
 });
