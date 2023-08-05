@@ -1,30 +1,30 @@
 <header>
-  <a class="d-flex" href="/">
-    <img
-      width="48"
-      height="48"
-      src="/favicon.ico"
-      alt="Fellipe Pires home link"
-    />
-  </a>
+  <div class="wrapper">
+    <div class="header">
+      <a class="d-flex" href="/">
+        <img
+          width="48"
+          height="48"
+          src="/favicon.ico"
+          alt="Fellipe Pires home link"
+        />
+      </a>
 
-  <nav class="navbar">
-    <!-- data-visible="false" (to be changed with JS) -->
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
-      </li>
-      <!-- TODO: add link to my Blog page -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/">Blog</a>
-      </li> -->
-    </ul>
-  </nav>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+        </ul>
+      </nav>
 
-  <div aria-label="Menu" class="mobile-nav" role="button" tabindex="0"></div>
+      <div aria-label="Menu" class="mobile-nav" role="button" tabindex="0">
+      </div>
+    </div>
+  </div>
 </header>
 
 <style lang="scss">
@@ -34,11 +34,7 @@
     text-decoration: none;
   }
 
-  header {
-    position: absolute;
-    top: 0;
-    z-index: $zIndices-sticky;
-
+  .header {
     width: 100%;
 
     display: flex;
@@ -49,7 +45,6 @@
     letter-spacing: $letterspacings-widest;
 
     padding-block: 1rem;
-    padding-inline: 2rem;
 
     .navbar {
       display: flex;
@@ -93,6 +88,8 @@
       width: $space-7;
 
       cursor: pointer;
+
+      padding: $space-4;
     }
 
     @media (max-width: $breakpoints-md) {
@@ -100,6 +97,7 @@
         position: absolute;
         top: $space-16;
         left: -100%;
+        z-index: $zIndices-overlay;
 
         flex-direction: column;
         justify-content: flex-start;
@@ -133,6 +131,27 @@
 </style>
 
 <script>
+  /**
+   * Enable or disable the page scroll based on the screen size.
+   * NOTE: it only takes effect on mobile resolution (e.g. below 768px).
+   */
+  function togglePageScroll() {
+    const isScrollActive = ["auto", "visible", "scroll"].includes(
+      document.body.style.overflow
+    );
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+      return;
+    }
+
+    if (isScrollActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }
+
   const navBar = document.querySelector(".navbar");
   const mobileNav = document.querySelector(".mobile-nav");
   const navMenu = document.querySelector(".nav-menu");
@@ -141,11 +160,13 @@
   if (mobileNav && navMenu && navBar) {
     mobileNav.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+      togglePageScroll();
     });
 
     mobileNav.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         navMenu.classList.toggle("active");
+        togglePageScroll();
       }
     });
 
@@ -155,6 +176,7 @@
       navLinks.forEach((navLink) => {
         navLink.addEventListener("click", () => {
           navMenu.classList.remove("active");
+          togglePageScroll();
         });
       });
     }
