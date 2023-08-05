@@ -34,4 +34,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/fthomasvp/fthomasvp.github.io/blob/main/LICENSE)
