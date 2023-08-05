@@ -41,7 +41,6 @@ const profileImages = {
 
     .introduction {
       display: flex;
-      flex: 1;
       flex-direction: column;
 
       padding-block-end: $space-8;
@@ -62,9 +61,6 @@ const profileImages = {
 
     .image {
       display: flex;
-      justify-content: center;
-
-      flex-grow: 1;
 
       img {
         max-width: 100%;
@@ -99,6 +95,7 @@ const profileImages = {
     }
     @media (min-width: $breakpoints-lg) {
       flex-direction: row;
+      justify-content: space-around;
 
       .introduction {
         justify-content: center;
@@ -106,6 +103,8 @@ const profileImages = {
         text-align: left;
 
         padding-block-end: 0;
+
+        width: min-content;
 
         h1 {
           font-size: $fontsizes-9xl;
