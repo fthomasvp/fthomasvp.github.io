@@ -6,119 +6,32 @@ const profileImages = {
 };
 ---
 
-<section id="hero" class="hero">
-  <div class="introduction animate__animated animate__fadeInLeft">
-    <h1>Hi, I'm Fellipe</h1>
-    <p>A front-end developer with focus on deliver great user experience.</p>
-  </div>
-  <div class="image animate__animated animate__fadeInDown">
-    <img
-      width="100%"
-      height="100%"
-      src={profileImages.large}
-      srcset={`${profileImages.small} 259w, ${profileImages.medium} 694w, ${profileImages.large} 950w`}
-      sizes="(min-width: 1180px) 724px, (min-width: 1000px) calc(72.5vw - 117px), calc(100vw - 32px)"
-      alt="Fellipe is wearing a yellow t-shirt and smiling"
-    />
+<section id="hero" class="pt-16">
+  <div
+    class="wrapper flex flex-col flex-wrap space-y-4 max-w-[62em] mx-auto px-4 pt-24 pb-48 lg:flex-row lg:justify-around lg:space-x-4 lg:space-y-0"
+  >
+    <div
+      class="animate__animated animate__fadeInLeft flex flex-col space-y-2 pb-8 text-center lg:justify-center lg:space-y-4 lg:text-left lg:pb-0 lg:w-min"
+    >
+      <h1
+        class="text-6xl font-bold tracking-wider leading-tight sm:text-8xl lg:text-9xl"
+      >
+        Hi, I'm Fellipe
+      </h1>
+      <p class="text-xl font-bebas-neue tracking-widest lg:text-2xl">
+        A front-end developer with focus on deliver great user experience.
+      </p>
+    </div>
+    <div class="animate__animated animate__fadeInDown flex">
+      <img
+        width="100%"
+        height="100%"
+        src={profileImages.large}
+        srcset={`${profileImages.small} 259w, ${profileImages.medium} 694w, ${profileImages.large} 950w`}
+        sizes="(min-width: 1180px) 724px, (min-width: 1000px) calc(72.5vw - 117px), calc(100vw - 32px)"
+        alt="Fellipe is wearing a yellow t-shirt and smiling"
+        class="max-w-full object-contain drop-shadow-basic h-60 sm:h-80 lg:h-[28rem]"
+      />
+    </div>
   </div>
 </section>
-
-<style lang="scss">
-  @import "../styles/base.scss";
-
-  .hero {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: $space-4;
-
-    max-width: $breakpoints-lg;
-
-    margin-inline: auto;
-    padding-inline: $space-4;
-    padding-block-start: $space-24;
-    padding-block-end: $space-48;
-
-    .introduction {
-      display: flex;
-      flex-direction: column;
-
-      padding-block-end: $space-8;
-
-      text-align: center;
-
-      h1 {
-        font-size: $fontsizes-8xl;
-        letter-spacing: $letterspacings-wider;
-        line-height: $lineheights-shorter;
-      }
-
-      p {
-        font-family: $fontfamily-bebas-neue;
-        letter-spacing: $letterspacings-widest;
-      }
-    }
-
-    .image {
-      display: flex;
-
-      img {
-        max-width: 100%;
-        object-fit: contain;
-
-        filter: drop-shadow(4px 8px 8px hsl(0deg 0% 0% / 0.38));
-      }
-    }
-
-    @media (max-width: $breakpoints-sm) {
-      .introduction {
-        h1 {
-          font-size: $fontsizes-6xl;
-        }
-        p {
-          font-size: $fontsizes-xl;
-        }
-      }
-
-      .image {
-        img {
-          height: 15 * $space-4;
-        }
-      }
-    }
-    @media (min-width: $breakpoints-sm) {
-      .image {
-        img {
-          height: 20 * $space-4;
-        }
-      }
-    }
-    @media (min-width: $breakpoints-lg) {
-      flex-direction: row;
-      justify-content: space-around;
-
-      .introduction {
-        justify-content: center;
-
-        text-align: left;
-
-        padding-block-end: 0;
-
-        width: min-content;
-
-        h1 {
-          font-size: $fontsizes-9xl;
-        }
-        p {
-          font-size: $fontsizes-2xl;
-        }
-      }
-
-      .image {
-        img {
-          height: 28 * $space-4;
-        }
-      }
-    }
-  }
-</style>

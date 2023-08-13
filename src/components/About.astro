@@ -1,4 +1,24 @@
-<section id="about" class="about diagonal-effect" tabindex="-1">
+---
+const aboutMe = [
+  {
+    title: "Creative",
+    description:
+      "I easily come up with simple and efficient ideas to solve complex scenarios. I also like to create prototypes and talk about UX/UI.",
+  },
+  {
+    title: "Team Player",
+    description:
+      "From smaller to bigger ones. I have been working on teams since the beginning of my career. Share and learn knowledge are part of my routine.",
+  },
+  {
+    title: "Adaptable",
+    description:
+      "Products are constantly changing. I'm always prepared to work on different scenarios depending on the necessity.",
+  },
+];
+---
+
+<section id="about" class="diagonal-effect" tabindex="-1">
   <picture>
     <source
       media="(min-width: 768px)"
@@ -8,105 +28,25 @@
       width="100%"
       height="100%"
       src="/images/vertical-blob-scatter-haikei.svg"
-      alt=""
+      alt="White blob scatter"
+      class="max-w-full h-full object-cover absolute inset-0 pointer-events-none m-auto -skew-y-[4deg]"
     />
   </picture>
 
-  <div class="wrapper">
+  <div class="wrapper space-y-24">
     <h2>About</h2>
 
-    <div class="soft-skills__container">
-      <div class="soft-skills">
-        <div class="skill">
-          <h3>Creative</h3>
-          <p>
-            I easily come up with simple and efficient ideas to solve complex
-            scenarios. I also like to create prototypes and talk about UX/UI.
-          </p>
-        </div>
-        <div class="skill">
-          <h3>Team Player</h3>
-          <p>
-            From smaller to bigger ones. I have been working on teams since the
-            beginning of my career. Share and learn knowledge are part of my
-            routine.
-          </p>
-        </div>
-        <div class="skill">
-          <h3>Adaptable</h3>
-          <p>
-            Products are constantly changing. I'm always prepared to work on
-            different scenarios depending on the necessity.
-          </p>
-        </div>
+    <div class="flex">
+      <div class="flex flex-col flex-grow space-y-12 md:flex-row md:space-y-0">
+        {
+          aboutMe.map(({ title, description }) => (
+            <div class="flex flex-col flex-1 space-y-4 px-3 lg:px-8">
+              <h3 class="text-center">{title}</h3>
+              <p class="text-left leading-7">{description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
 </section>
-
-<style lang="scss">
-  @import "../styles/base.scss";
-
-  .about {
-    img {
-      max-width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      position: absolute;
-      inset: 0;
-      /**
-       * When an element is absolute and it's behind another element,
-       * I'm not able to select the text content that is above it.
-       * See https://stackoverflow.com/questions/36674135/text-selection-on-a-element-behind-an-absolute-element
-       */
-      pointer-events: none;
-
-      margin: auto;
-
-      /**
-      * Needed to avoid unexpected image cuts.
-      */
-      transform: skewY(-4deg);
-    }
-
-    .soft-skills__container {
-      display: flex;
-
-      .soft-skills {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-
-        @media (min-width: $breakpoints-md) {
-          flex-direction: row;
-        }
-
-        .skill {
-          margin-block: $space-2;
-          margin-inline: $space-2;
-          padding-block: $space-3;
-          padding-inline: $space-2;
-
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-
-          @media (min-width: $breakpoints-lg) {
-            padding-inline: $space-8;
-          }
-
-          h3 {
-            text-align: center;
-          }
-
-          p {
-            text-align: left;
-            line-height: $lineheights-7;
-          }
-        }
-      }
-    }
-  }
-</style>
