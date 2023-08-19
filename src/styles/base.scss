@@ -10,15 +10,6 @@
 @import "./spaces.scss";
 
 @layer base {
-  *,
-  *::before,
-  *::after {
-    @apply box-border scroll-smooth m-0 p-0 break-words;
-  }
-  *:focus-visible {
-    @apply outline-none drop-shadow-focused;
-  }
-
   body {
     @apply bg-white text-black-rich font-poppins text-base leading-normal sm:text-lg;
   }
@@ -45,7 +36,7 @@
 
 @layer utilities {
   .wrapper {
-    @apply max-w-[70em] mx-auto px-5;
+    @apply max-w-[70em] mx-auto px-5 space-y-24;
   }
 
   /*
@@ -108,4 +99,26 @@
       background-position: 0% 100%;
     }
   }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  margin: 0;
+  padding: 0;
+
+  word-wrap: break-word;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px $colors-yellow-mikado;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
