@@ -39,6 +39,26 @@
     @apply max-w-[70em] mx-auto px-5 space-y-24;
   }
 
+  .button {
+    @apply relative inline-flex justify-center items-center align-middle;
+
+    @apply cursor-pointer outline-1 outline-transparent appearance-none select-none;
+
+    @apply border-none rounded-md px-4;
+
+    @apply w-full h-10 min-w-[2.5rem];
+
+    @apply text-base font-semibold leading-tight whitespace-nowrap no-underline;
+
+    &.outline {
+      @apply border border-solid border-blue-yale bg-white text-blue-yale hover:bg-blue-yale-light active:bg-blue-yale-light2;
+    }
+
+    &.solid {
+      @apply bg-blue-yale text-white hover:bg-blue-yale-dark active:bg-blue-yale-dark2;
+    }
+  }
+
   /*
     Diagonal background effect
   */
