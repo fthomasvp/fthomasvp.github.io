@@ -1,6 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "./breakpoints.scss";
 @import "./typography.scss";
 @import "./radius.scss";
 @import "./zIndices.scss";
 @import "./colors.scss";
 @import "./spaces.scss";
+
+@layer base {
+  body {
+    @apply bg-white text-black-rich font-poppins text-base leading-normal sm:text-lg;
+  }
+
+  section {
+    @apply py-24 md:py-32;
+  }
+
+  h1 {
+    @apply font-bebas-neue text-5xl;
+  }
+  h2 {
+    @apply font-bebas-neue text-4xl tracking-wider;
+  }
+  h3 {
+    @apply font-bebas-neue text-3xl tracking-widest font-medium;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply font-bebas-neue;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-[70em] mx-auto px-5 space-y-24;
+  }
+
+  .button {
+    @apply relative inline-flex justify-center items-center align-middle;
+
+    @apply cursor-pointer outline-1 outline-transparent appearance-none select-none;
+
+    @apply border-none rounded-md px-4;
+
+    @apply w-full h-10 min-w-[2.5rem];
+
+    @apply text-base font-semibold leading-tight whitespace-nowrap no-underline;
+
+    &.outline {
+      @apply border border-solid border-blue-yale bg-white text-blue-yale hover:bg-blue-yale-light active:bg-blue-yale-light2;
+    }
+
+    &.solid {
+      @apply bg-blue-yale text-white hover:bg-blue-yale-dark active:bg-blue-yale-dark2;
+    }
+  }
+
+  /*
+    Diagonal background effect
+  */
+  .diagonal-effect {
+    @apply relative isolation-auto after:content-[''] after:absolute after:inset-0 after:-z-10 after:-skew-y-[4deg] after:bg-gold;
+  }
+
+  /*
+    Wave background effect
+  */
+  .wave-effect {
+    position: relative;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      z-index: $zIndices-hide;
+
+      width: 100%;
+      height: 180px;
+
+      transform: rotateX(180deg);
+
+      background: $colors-gold;
+      mask-image: url("/images/wave-headline-01.svg");
+      -webkit-mask-image: url("/images/wave-headline-01.svg");
+    }
+  }
+
+  /*
+    Highlight animation
+  */
+  .text-highlight {
+    background: linear-gradient(
+      to right,
+      white,
+      white 50%,
+      $colors-gunmetal 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+
+    animation: 4s ease-in-out 1s infinite normal none running highlighting;
+  }
+  @keyframes highlighting {
+    from {
+      background-position: 100%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    to {
+      background-position: 0% 100%;
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  margin: 0;
+  padding: 0;
+
+  word-wrap: break-word;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px $colors-yellow-mikado;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
