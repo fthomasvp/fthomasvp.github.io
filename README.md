@@ -9,7 +9,7 @@ It's available at https://www.fthomasvp.github.io
 
 | Tool                              | Version |
 | :-------------------------------- | :------ |
-| [Node.js](https://nodejs.org/en/) | 16.x    |
+| [Node.js](https://nodejs.org/en/) | 18.x    |
 
 > _This project was bootstrapped with [Astro](https://docs.astro.build)_
 
@@ -23,14 +23,14 @@ npm install
 
 All commands are run from the root of the project, from a terminal:
 
-| Command               | Action                                           |
-| :-------------------- | :----------------------------------------------- |
-| `npm run dev`         | Starts local dev server at `localhost:3000`      |
-| `npm run build`       | Build your production site to `./dist/`          |
-| `npm run preview`     | Preview your build locally, before deploying     |
-| `npm run astro ...`   | Run CLI commands like `astro add`, `astro check` |
-| `npm run prettier`    | Run Prettier in **write** mode                   |
-| `npm run lint`        | Run ESLint to find lint issues in code           |
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `npm run dev`       | Starts local dev server at `localhost:4321`      |
+| `npm run build`     | Build your production site to `./dist/`          |
+| `npm run preview`   | Preview your build locally, before deploying     |
+| `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
+| `npm run prettier`  | Run Prettier in **write** mode                   |
+| `npm run lint`      | Run ESLint to find lint issues on code           |
 
 ## License
 
