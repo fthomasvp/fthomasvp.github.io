@@ -43,10 +43,10 @@ const projects: Project[] = [
   <div class="wrapper">
     <h2>Projects</h2>
     <div class="flex">
-      <div class="flex flex-col py-3 space-y-16 md:gap-0">
+      <div class="flex flex-col space-y-16 py-3 md:gap-0">
         {
           projects.map((item) => (
-            <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-16 md:even:space-x-reverse border border-solid border-black-rich rounded-xl p-3 md:flex-row md:border-none md:rounded-none md:px-0 md:even:flex-row-reverse">
+            <div class="flex flex-col space-y-6 rounded-xl border border-solid border-black-rich p-3 md:flex-row md:space-x-16 md:space-y-0 md:rounded-none md:border-none md:px-0 md:even:flex-row-reverse md:even:space-x-reverse">
               <div class="flex flex-col space-y-4 md:flex-1">
                 <div class="overflow-hidden rounded-md">
                   <img
@@ -57,11 +57,11 @@ const projects: Project[] = [
                     srcset={`${item.cover.sources.small} 290w, ${item.cover.sources.medium} 723w, ${item.cover.sources.large} 1140w`}
                     sizes="(min-width: 1340px) 723px, (min-width: 780px) 55.56vw, calc(100vw - 66px)"
                     alt={item.cover.alternativeText}
-                    class="max-w-full transition-transform duration-300 ease-linear object-cover hover:scale-110"
+                    class="max-w-full object-cover transition-transform duration-300 ease-linear hover:scale-110"
                   />
                 </div>
 
-                <div class="flex justify-center mb-4 md:mb-0">
+                <div class="mb-4 flex justify-center md:mb-0">
                   <div class="flex space-x-3">
                     {item.icons.map((name) => (
                       <Icon name={name} />
@@ -73,7 +73,7 @@ const projects: Project[] = [
               <div class="flex flex-col space-y-6 md:flex-[0.6] md:justify-center">
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <div class="flex flex-col flex-wrap space-y-6 sm:space-y-0 sm:space-x-6 sm:flex-row">
+                <div class="flex flex-col flex-wrap space-y-6 sm:flex-row sm:space-x-6 sm:space-y-0">
                   {item.demoUrl && (
                     <Button
                       title="Live Demo"

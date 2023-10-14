@@ -1,9 +1,9 @@
 <header>
   <div class="wrapper">
     <div
-      class="w-full flex justify-between items-center font-bebas-neue tracking-widest py-4"
+      class="flex w-full items-center justify-between py-4 font-bebas-neue tracking-widest"
     >
-      <a class="no-underline flex" href="/">
+      <a class="flex no-underline" href="/">
         <img
           width="48"
           height="48"
@@ -15,23 +15,23 @@
       <nav data-component="navbar" class="flex">
         <ul
           data-component="nav-menu"
-          class="absolute top-24 -left-full z-30 flex-col justify-start text-center w-full h-screen py-16 bg-white overflow-hidden transition-all duration-300 ease-in-out delay-75 md:static md:flex md:flex-row md:justify-center md:h-auto md:py-0 space-y-14 md:space-x-14 md:space-y-0 md:list-none md:overflow-visible"
+          class="absolute -left-full top-24 z-30 h-screen w-full flex-col justify-start space-y-14 overflow-hidden bg-white py-16 text-center transition-all delay-75 duration-300 ease-in-out md:static md:flex md:h-auto md:list-none md:flex-row md:justify-center md:space-x-14 md:space-y-0 md:overflow-visible md:py-0"
         >
           <li
-            class="text-2xl font-medium transition-transform ease-in-out duration-300 hover:scale-125"
+            class="text-2xl font-medium transition-transform duration-300 ease-in-out hover:scale-125"
           >
             <a
               data-component="nav-link"
-              class="no-underline text-blue-oxford hover:underline"
+              class="text-blue-oxford no-underline hover:underline"
               href="#about">About</a
             >
           </li>
           <li
-            class="text-2xl font-medium transition-transform ease-in-out duration-300 hover:scale-125"
+            class="text-2xl font-medium transition-transform duration-300 ease-in-out hover:scale-125"
           >
             <a
               data-component="nav-link"
-              class="no-underline text-blue-oxford hover:underline"
+              class="text-blue-oxford no-underline hover:underline"
               href="#projects">Projects</a
             >
           </li>
@@ -40,7 +40,7 @@
 
       <button
         data-component="mobile-nav"
-        class="block md:hidden md:cursor-pointer md:bg-none border-none"
+        class="block border-none md:hidden md:cursor-pointer md:bg-none"
         tabindex="0"
       >
         <img
@@ -63,7 +63,7 @@
    */
   function togglePageScroll() {
     const isScrollActive = ["auto", "visible", "scroll"].includes(
-      document.body.style.overflow
+      document.body.style.overflow,
     );
     const isMobile = window.innerWidth <= 768;
 
