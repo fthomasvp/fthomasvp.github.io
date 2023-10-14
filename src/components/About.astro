@@ -29,7 +29,7 @@ const aboutMe = [
       height="100%"
       src="/images/vertical-blob-scatter-haikei.svg"
       alt="White blob scatter"
-      class="max-w-full h-full object-cover absolute inset-0 pointer-events-none m-auto -skew-y-[4deg]"
+      class="pointer-events-none absolute inset-0 m-auto h-full max-w-full -skew-y-[4deg] object-cover"
     />
   </picture>
 
@@ -37,10 +37,10 @@ const aboutMe = [
     <h2>About</h2>
 
     <div class="flex">
-      <div class="flex flex-col flex-grow space-y-12 md:flex-row md:space-y-0">
+      <div class="flex flex-grow flex-col space-y-12 md:flex-row md:space-y-0">
         {
           aboutMe.map(({ title, description }) => (
-            <div class="flex flex-col flex-1 space-y-4 px-3 lg:px-8">
+            <div class="flex flex-1 flex-col space-y-4 px-3 lg:px-8">
               <h3 class="text-center">{title}</h3>
               <p class="text-left leading-7">{description}</p>
             </div>
