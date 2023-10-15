@@ -73,10 +73,10 @@ $letterspacings-widest: 0.1em;
 }
 
 @font-face {
-  font-family: "Bebas Neue";
+  font-family: "Gabarito";
   font-weight: $fontweights-normal;
   font-style: normal;
-  src: url("/fonts/bebasneue-regular-webfont.woff") format("woff");
+  src: url("/fonts/gabarito-variablefont_wght-webfont.woff") format("woff");
   font-display: swap;
 }
 
@@ -92,4 +92,4 @@ $fontfamily-fallback:
   "Helvetica Neue",
   sans-serif;
 $fontfamily-poppins: "Poppins", sans-serif, $fontfamily-fallback;
-$fontfamily-bebas-neue: "Bebas Neue", cursive, $fontfamily-fallback;
+$fontfamily-gabarito: "Gabarito", sans-serif, $fontfamily-fallback;
