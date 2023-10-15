@@ -19,18 +19,18 @@
   }
 
   h1 {
-    @apply font-bebas-neue text-5xl;
+    @apply font-gabarito text-6xl;
   }
   h2 {
-    @apply font-bebas-neue text-4xl tracking-wider;
+    @apply font-gabarito text-5xl tracking-wider;
   }
   h3 {
-    @apply font-bebas-neue text-3xl font-medium tracking-widest;
+    @apply font-gabarito text-4xl font-medium tracking-widest;
   }
   h4,
   h5,
   h6 {
-    @apply font-bebas-neue;
+    @apply font-gabarito;
   }
 }
 

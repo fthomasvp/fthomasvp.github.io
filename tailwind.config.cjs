@@ -25,7 +25,7 @@ module.exports = {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        "bebas-neue": ["Bebas Neue", "cursive"],
+        "gabarito": ["Gabarito", "sans-serif"],
       },
       dropShadow: {
         basic: "4px 8px 8px hsl(0deg 0% 0% / 0.38)",
