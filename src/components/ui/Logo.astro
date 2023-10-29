@@ -1,0 +1,17 @@
+---
+interface Props {
+  titleStyle?: string;
+}
+
+const { titleStyle } = Astro.props;
+---
+
+<a class="flex items-center space-x-4 no-underline" href="/">
+  <img
+    src="/favicon.ico"
+    alt="Fellipe Pires home link"
+    width="48"
+    height="48"
+  />
+  <span class:list={["text-xl", titleStyle]}>Fellipe Pires</span>
+</a>

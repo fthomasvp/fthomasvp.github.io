@@ -24,7 +24,7 @@ const { href, title, target, rel, variant } = Astro.props;
 ---
 
 <div>
-  <a class={`button ${variant}`} href={href} target={target} rel={rel}>
+  <a class:list={["button", variant]} href={href} target={target} rel={rel}>
     {title}
   </a>
 </div>

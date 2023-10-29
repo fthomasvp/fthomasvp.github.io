@@ -1,4 +1,6 @@
 ---
+import { Logo } from "./ui/index.astro";
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -7,18 +9,15 @@ const currentYear = new Date().getFullYear();
     <div
       class="flex flex-col flex-wrap items-center space-y-6 md:mb-0 md:flex-row md:justify-between md:space-y-0"
     >
-      <a class="flex" href="/">
-        <img
-          src="/android-chrome-192x192.png"
-          alt="Fellipe Pires home link"
-          width="48"
-          height="48"
-        />
-      </a>
+      <Logo titleStyle="text-white" />
 
       <div class="flex flex-wrap justify-center space-x-6">
         <div>
-          <a href="https://linkedin.com/in/fthomasvp" class="flex">
+          <a
+            href="https://linkedin.com/in/fthomasvp"
+            class="flex"
+            target="_blank"
+          >
             <img
               loading="lazy"
               src="/images/linkedin-white.png"
@@ -29,7 +28,7 @@ const currentYear = new Date().getFullYear();
           </a>
         </div>
         <div>
-          <a href="https://github.com/fthomasvp" class="flex"
+          <a href="https://github.com/fthomasvp" class="flex" target="_blank"
             ><img
               loading="lazy"
               src="/images/github-white.png"
