@@ -1,5 +1,13 @@
+/** @type {import("eslint").Linter.Config} */
+// See https://patheticgeek.dev/blog/astro-prettier-eslint-vscode
 module.exports = {
   extends: ["plugin:astro/recommended", "plugin:astro/jsx-a11y-recommended"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    sourceType: "module",
+    ecmaVersion: "latest",
+  },
   overrides: [
     {
       // Define the configuration for `.astro` file.
