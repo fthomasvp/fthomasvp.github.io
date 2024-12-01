@@ -1,28 +1,25 @@
 ---
+import { Image } from "astro:assets";
+
 import Button from "../components/ui/Button.astro";
 import Layout from "../layouts/Layout.astro";
+import fellipePiresInitials from "../assets/images/android-chrome-192x192.png";
 ---
 
 <Layout title="Not found - Fellipe Pires">
-  <div
-    class="flex flex-1 flex-col items-center justify-center"
-    style="height: 100vh; gap: 2rem;"
-  >
+  <div class="flex h-screen flex-1 flex-col items-center justify-center gap-8">
     <div>
-      <img
-        src="/android-chrome-192x192.png"
-        alt="Fellipe Pires home link"
-        width="192"
-        height="192"
+      <Image
+        src={fellipePiresInitials}
+        alt="Fellipe Pires initials"
+        width={192}
+        height={192}
       />
     </div>
 
-    <div
-      class="flex flex-col items-center"
-      style="gap: 2rem; padding: 1.75rem;"
-    >
-      <div class="flex flex-col items-center">
-        <h1>4 0 4</h1>
+    <div class="flex flex-col items-center gap-8 p-7">
+      <div class="flex flex-col items-center gap-3">
+        <h1 class="tracking-widest">404</h1>
         <h3>Oops! The page you were looking for doesn't exist.</h3>
         <p>You may have mistyped the address or the page may have moved.</p>
       </div>

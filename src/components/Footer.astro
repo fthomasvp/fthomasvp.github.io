@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 import { Logo } from "./ui/index.astro";
+import whiteLinkedInLogo from "../assets/images/linkedin-white.png";
+import whiteGitHubLogo from "../assets/images/github-white.png";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -18,25 +22,18 @@ const currentYear = new Date().getFullYear();
             class="flex"
             target="_blank"
           >
-            <img
-              loading="lazy"
-              src="/images/linkedin-white.png"
+            <Image
+              src={whiteLinkedInLogo}
               alt="LinkedIn"
-              width="42"
-              height="42"
+              width={42}
+              height={42}
             />
           </a>
         </div>
         <div>
-          <a href="https://github.com/fthomasvp" class="flex" target="_blank"
-            ><img
-              loading="lazy"
-              src="/images/github-white.png"
-              alt="GitHub"
-              width="42"
-              height="42"
-            /></a
-          >
+          <a href="https://github.com/fthomasvp" class="flex" target="_blank">
+            <Image src={whiteGitHubLogo} alt="GitHub" width={42} height={42} />
+          </a>
         </div>
       </div>
     </div>
