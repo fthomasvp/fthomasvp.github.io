@@ -1,28 +1,16 @@
 ---
-const profileImages = {
-  small: "/images/profile-fthomasvp-circle-small.png",
-  medium: "/images/profile-fthomasvp-circle-medium.png",
-  large: "/images/profile-fthomasvp-circle-large.png",
-};
+import { Image } from "astro:assets";
+
+import profileImage from "../assets/images/profile-fthomasvp-rounded-950w.png";
 ---
 
-<section id="hero" class="pt-0 md:pt-16">
+<section id="hero">
   <div
-    class="wrapper mx-auto flex max-w-[62em] flex-col flex-wrap space-y-4 px-4 pb-48 pt-8 md:pt-24 lg:flex-row-reverse lg:justify-around lg:space-x-4 lg:space-y-0"
+    class="mx-auto grid max-w-[70em] grid-cols-1 gap-6 px-8 md:gap-10 lg:grid-cols-2"
   >
-    <div class="animate__animated animate__fadeInDown flex">
-      <img
-        width="100%"
-        height="100%"
-        src={profileImages.large}
-        srcset={`${profileImages.small} 259w, ${profileImages.medium} 694w, ${profileImages.large} 950w`}
-        sizes="(min-width: 1180px) 724px, (min-width: 1000px) calc(72.5vw - 117px), calc(100vw - 32px)"
-        alt="Fellipe is wearing a yellow t-shirt and smiling"
-        class="h-60 max-w-full object-contain drop-shadow-basic sm:h-80 lg:h-[28rem]"
-      />
-    </div>
+    <!-- Copy -->
     <div
-      class="animate__animated animate__fadeInLeft flex flex-col space-y-2 pb-8 text-center lg:w-min lg:justify-center lg:space-y-4 lg:pb-0 lg:text-left"
+      class="animate__animated animate__fadeIn order-last flex w-full flex-col gap-y-2 text-center lg:order-first lg:justify-center lg:gap-y-4 lg:text-left"
     >
       <h1
         class="font-bold leading-tight tracking-wider sm:text-8xl lg:text-9xl"
@@ -32,6 +20,16 @@ const profileImages = {
       <p class="font-gabarito text-xl tracking-widest lg:text-2xl">
         A front-end developer focusing on deliver great user experience.
       </p>
+    </div>
+
+    <!-- Image -->
+    <div class="animate__animated animate__fadeIn order-first lg:order-last">
+      <Image
+        src={profileImage}
+        alt="Fellipe is wearing a yellow t-shirt and smiling"
+        loading="eager"
+        class="h-60 max-w-full object-contain drop-shadow-basic sm:h-80 lg:h-[28rem]"
+      />
     </div>
   </div>
 </section>
