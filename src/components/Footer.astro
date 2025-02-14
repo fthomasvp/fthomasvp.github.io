@@ -4,8 +4,6 @@ import { Image } from "astro:assets";
 import { Logo } from "./ui/index.astro";
 import whiteLinkedInLogo from "../assets/images/linkedin-white.png";
 import whiteGitHubLogo from "../assets/images/github-white.png";
-
-const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-blue-yale py-4" tabindex="-1">
@@ -39,8 +37,22 @@ const currentYear = new Date().getFullYear();
     </div>
     <div class="text-center text-xs text-white" style="margin: 0;">
       <div class="mt-4 md:mt-0">
-        <p>Copyright &copy; {currentYear} Fellipe Pires</p>
+        <p>
+          Copyright &copy; <span data-element="copyright_year"></span> Fellipe
+          Pires
+        </p>
       </div>
     </div>
   </div>
+
+  <script>
+    const copyrightYear = document.querySelector(
+      "span[data-element='copyright_year']",
+    );
+
+    if (copyrightYear) {
+      const currentYear = new Date().getFullYear().toString();
+      copyrightYear.innerHTML = currentYear;
+    }
+  </script>
 </footer>
