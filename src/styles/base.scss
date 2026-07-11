@@ -1,13 +1,17 @@
+// This exposes the variables globally in this file without prefixes
+@use "./breakpoints.scss" as *;
+@use "./typography.scss" as *;
+@use "./radius.scss" as *;
+@use "./zIndices.scss" as *;
+@use "./colors.scss" as *;
+@use "./spaces.scss" as *;
+
+// Here's an example using prefix
+// @use "./zIndices.scss" as zIndexes;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./breakpoints.scss";
-@import "./typography.scss";
-@import "./radius.scss";
-@import "./zIndices.scss";
-@import "./colors.scss";
-@import "./spaces.scss";
 
 @layer base {
   body {
