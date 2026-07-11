@@ -11,10 +11,10 @@
     "lint": "eslint src/**/*.{js,ts,jsx,tsx,astro}"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.3.2",
     "animate.css": "^4.1.1",
-    "astro": "^7.0.7",
-    "tailwindcss": "^3.3.3"
+    "astro": "7.0.7",
+    "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.7.5",

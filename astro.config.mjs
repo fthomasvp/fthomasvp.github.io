@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,10 +11,7 @@ export default defineConfig({
       "Cache-Control": import.meta.env.PROD ? "max-age=31536000" : "no-cache",
     },
   },
-  integrations: [
-    tailwind({
-      // See https://docs.astro.build/en/guides/integrations-guide/tailwind/#applybasestyles
-      applyBaseStyles: false,
-    }),
-  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

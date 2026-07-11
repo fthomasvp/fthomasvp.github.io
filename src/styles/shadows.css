@@ -1,0 +1,4 @@
+@theme {
+  --drop-shadow-basic: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  --drop-shadow-focused: 0 0 0 3px hsl(46 100% 50%);
+}

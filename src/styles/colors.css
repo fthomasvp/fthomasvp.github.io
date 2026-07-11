@@ -1,0 +1,17 @@
+/* https://coolors.co/palette/000814-001d3d-003566-ffc300-ffd60a */
+@theme {
+  --color-white: hsl(216 100% 99%);
+  --color-black-rich: hsl(216 100% 4%);
+
+  --color-gunmetal: #2b2d42;
+
+  --color-blue-oxford: hsl(211 100% 12%);
+  --color-blue-yale: hsl(209 100% 20%);
+  --color-blue-yale-dark: #002e59;
+  --color-blue-yale-dark2: #00284d;
+  --color-blue-yale-light: #e6f3ff;
+  --color-blue-yale-light2: #d9edff;
+
+  --color-gold: hsl(50 100% 52%);
+  --color-yellow-mikado: hsl(46 100% 50%);
+}
