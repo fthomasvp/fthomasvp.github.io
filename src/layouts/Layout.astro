@@ -3,13 +3,13 @@ import "animate.css";
 import "../styles/global.css";
 
 export interface Props {
-  title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
 
 const description =
-  "Fellipe Pires is a creative, team player and adaptable front-end developer focusing on deliver great user experience.";
+	"Fellipe Pires is a creative, team player and adaptable front-end developer focusing on deliver great user experience.";
 const websiteUrl = "https://www.fthomasvp.github.io";
 const imageUrl = "https://fthomasvp.github.io/android-chrome-192x192.png";
 const imageAlt = "Fellipe Pires white initials over a dark background";
@@ -51,6 +51,7 @@ const imageAlt = "Fellipe Pires white initials over a dark background";
 
     <!-- Google Tag Manager -->
     <script>
+      // biome-ignore-all lint: Google Tag Manager script invocation
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });

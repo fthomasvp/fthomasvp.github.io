@@ -1,17 +1,16 @@
 ---
 import { Image } from "astro:assets";
-
-import { Logo } from "./ui/index.astro";
 import hamburgerIcon from "../assets/images/icons8-hamburger-menu.svg";
+import { Logo } from "./ui/index.astro";
 
 interface NavLink {
-  title: string;
-  url: string;
+	title: string;
+	url: string;
 }
 
 const navLinks: Array<NavLink> = [
-  { title: "About", url: "#about" },
-  { title: "Projects", url: "#projects" },
+	{ title: "About", url: "#about" },
+	{ title: "Projects", url: "#projects" },
 ];
 ---
 
@@ -44,6 +43,7 @@ const navLinks: Array<NavLink> = [
       </nav>
 
       <button
+        type="button"
         data-component="mobile-nav"
         class="block border-none md:hidden md:cursor-pointer md:bg-none"
         tabindex="0"
@@ -54,7 +54,7 @@ const navLinks: Array<NavLink> = [
           width={50}
           height={50}
           loading="eager"
-          class="aspect-[3/2]"
+          class="aspect-3/2"
         />
       </button>
     </div>
