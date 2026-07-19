@@ -1,7 +1,7 @@
 # Fellipe Pires - Portfolio
 
-It's a static page that was built using Astro - which is an amazing framework to build web pages.
-It's available at https://www.fthomasvp.github.io
+Static page built using Astro - which is an amazing framework to build web pages.
+Check it out on https://www.fthomasvp.github.io
 
 ## Installation
 
@@ -9,7 +9,7 @@ It's available at https://www.fthomasvp.github.io
 
 | Tool                              | Version |
 | :-------------------------------- | :------ |
-| [Node.js](https://nodejs.org/en/) | 18.x    |
+| [Node.js](https://nodejs.org/en/) | 24.x    |
 
 > _This project was bootstrapped with [Astro](https://docs.astro.build)_
 

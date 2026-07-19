@@ -1,23 +1,23 @@
 ---
 export interface Props {
-  title: string;
-  variant: "solid" | "outline";
-  href?: string;
-  target?: "_blank" | "_parent" | "_self" | "_top";
-  rel?:
-    | "alternate"
-    | "author"
-    | "bookmark"
-    | "external"
-    | "help"
-    | "license"
-    | "next"
-    | "nofollow"
-    | "noreferrer"
-    | "noopener"
-    | "prev"
-    | "search"
-    | "tag";
+	title: string;
+	variant: "solid" | "outline";
+	href?: string;
+	target?: "_blank" | "_parent" | "_self" | "_top";
+	rel?:
+		| "alternate"
+		| "author"
+		| "bookmark"
+		| "external"
+		| "help"
+		| "license"
+		| "next"
+		| "nofollow"
+		| "noreferrer"
+		| "noopener"
+		| "prev"
+		| "search"
+		| "tag";
 }
 
 const { href, title, target, rel, variant } = Astro.props;

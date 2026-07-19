@@ -1,20 +1,20 @@
 ---
 const aboutMe = [
-  {
-    title: "Creative",
-    description:
-      "I easily come up with simple and efficient ideas to solve complex scenarios. I also like to create prototypes and talk about UX/UI.",
-  },
-  {
-    title: "Team Player",
-    description:
-      "From smaller to bigger ones. I have been working on teams since the beginning of my career. Share and learn knowledge are part of my routine.",
-  },
-  {
-    title: "Adaptable",
-    description:
-      "Products are constantly changing. I'm always prepared to work on different scenarios depending on the necessity.",
-  },
+	{
+		title: "Creative",
+		description:
+			"I easily come up with simple and efficient ideas to solve complex scenarios. I also like to create prototypes and talk about UX/UI.",
+	},
+	{
+		title: "Team Player",
+		description:
+			"From smaller to bigger ones. I have been working on teams since the beginning of my career. Share and learn knowledge are part of my routine.",
+	},
+	{
+		title: "Adaptable",
+		description:
+			"Products are constantly changing. I'm always prepared to work on different scenarios depending on the necessity.",
+	},
 ];
 ---
 
@@ -29,7 +29,7 @@ const aboutMe = [
       height="100%"
       src="/images/vertical-blob-scatter-haikei.svg"
       alt="White blob scatter"
-      class="pointer-events-none absolute inset-0 m-auto h-full max-w-full -skew-y-[4deg] object-cover opacity-60"
+      class="pointer-events-none absolute inset-0 m-auto h-full max-w-full skew-y-[-4deg] object-cover opacity-60"
     />
   </picture>
 
@@ -37,7 +37,7 @@ const aboutMe = [
     <h2>About</h2>
 
     <div class="flex">
-      <div class="flex flex-grow flex-col space-y-12 md:flex-row md:space-y-0">
+      <div class="flex grow flex-col space-y-12 md:flex-row md:space-y-0">
         {
           aboutMe.map(({ title, description }) => (
             <div class="flex flex-1 flex-col space-y-4 px-3 lg:px-8">

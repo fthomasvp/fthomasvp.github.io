@@ -1,40 +1,39 @@
 ---
-import type { ImageMetadata } from "astro";
-
-import { Button, Icon, type IconProps } from "./ui/index.astro";
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Button, Icon, type IconProps } from "./ui/index.astro";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/images/*.{jpeg,jpg,png,gif}",
+	"/src/assets/images/*.{jpeg,jpg,png,gif}",
 );
 
 interface Project {
-  title: string;
-  description: string;
-  cover: {
-    source: any;
-    altText: string;
-  };
-  icons: Array<IconProps["name"]>;
-  githubUrl: string;
-  demoUrl?: string;
+	title: string;
+	description: string;
+	cover: {
+		source: any;
+		altText: string;
+	};
+	icons: Array<IconProps["name"]>;
+	githubUrl: string;
+	demoUrl?: string;
 }
 
 /**
  * New projects must be added in this array.
  */
 const projects: Project[] = [
-  {
-    title: "Agenda",
-    description:
-      "Have you ever had problems to book any common area in your building? Agenda is the best solution to help you with that!",
-    cover: {
-      source: images["/src/assets/images/project-agenda-cover-1140w.jpg"](),
-      altText: "Login page from Agenda application",
-    },
-    icons: ["html5", "css3", "typescript", "react"],
-    githubUrl: "https://github.com/fthomasvp/agenda-granharmonia-web",
-  },
+	{
+		title: "Agenda",
+		description:
+			"Have you ever had problems to book any common area in your building? Agenda is the best solution to help you with that!",
+		cover: {
+			source: images["/src/assets/images/project-agenda-cover-1140w.jpg"](),
+			altText: "Login page from Agenda application",
+		},
+		icons: ["html5", "css3", "typescript", "react"],
+		githubUrl: "https://github.com/fthomasvp/agenda-granharmonia-web",
+	},
 ];
 ---
 
